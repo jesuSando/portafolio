@@ -2,6 +2,7 @@
 
 :root {
     --background: linear-gradient(180deg, #140021 0%, #2c0383 100%);
+    --foreground: #390a59;
     --primary: #9900FF;
     --secondary: #7700c6;
     --accent: #560090;
