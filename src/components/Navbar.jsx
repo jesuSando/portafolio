@@ -3,7 +3,46 @@ import { MenuIcon, X } from "lucide-react";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const panelRef = useRef(null);
+
+    useEffect(() => {
+        const controlNavbar = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 100) {
+                setIsVisible(true);
+
+                if (currentScrollY > lastScrollY) {
+                    setIsVisible(false);
+                } else {
+                    setIsVisible(true);
+                }
+            } else {
+                setIsVisible(false);
+            }
+
+            setLastScrollY(currentScrollY);
+        };
+
+        let ticking = false;
+        const throttledControlNavbar = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    controlNavbar();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', throttledControlNavbar, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', throttledControlNavbar);
+        };
+    }, [lastScrollY]);
 
     useEffect(() => {
         document.body.style.overflow = open ? "hidden" : "";
@@ -21,15 +60,16 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className="relative flex items-center w-full h-20 justify-between px-6 md:px-8 bg-transparent text-white text-lg">
-            <a href="#hero" className="text-2xl md:text-3xl font-extrabold">JesuSando</a>
+        <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center w-full h-20 justify-between px-6 md:px-8 text-white text-lg bg-black/10 backdrop-blur-md transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+            }`}>
+            <a href="#hero" className="text-2xl md:text-4xl font-extrabold gradient-text">JesuSando</a>
 
             <ul className="hidden md:flex gap-6 items-center">
-                <li><a href="#about" className="hover:text-cyan-400 transition">Sobre mí</a></li>
-                <li><a href="#projects" className="hover:text-cyan-400 transition">Proyectos</a></li>
-                <li><a href="#skills" className="hover:text-cyan-400 transition">Tecnologías</a></li>
-                <li><a href="#experience" className="hover:text-cyan-400 transition">Experiencia</a></li>
-                <li><a href="#contact" className="hover:text-cyan-400 transition">Contacto</a></li>
+                <li><a href="#about" className="hover:text-[var(--secondary-400)] transition duration-200">Sobre mí</a></li>
+                <li><a href="#projects" className="hover:text-[var(--secondary-400)] transition duration-200">Proyectos</a></li>
+                <li><a href="#skills" className="hover:text-[var(--secondary-400)] transition duration-200">Tecnologías</a></li>
+                <li><a href="#experience" className="hover:text-[var(--secondary-400)] transition duration-200">Experiencia</a></li>
+                <li><a href="#contact" className="hover:text-[var(--secondary-400)] transition duration-200">Contacto</a></li>
             </ul>
 
             {!open && (
