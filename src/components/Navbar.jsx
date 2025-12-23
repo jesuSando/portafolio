@@ -60,7 +60,7 @@ export default function Navbar() {
     }, []);
 
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center w-full h-20 justify-between px-6 md:px-8 text-white text-lg bg-black/10 backdrop-blur-md transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+        <nav className={`fixed top-0 left-0 right-0 z-50 flex items-center w-full h-20 justify-between px-6 md:px-8 text-white text-lg bg-white/5 border-b border-b-white/10 backdrop-blur-md transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
             }`}>
             <a href="#hero" className="text-2xl md:text-4xl font-extrabold gradient-text">JesuSando</a>
 
