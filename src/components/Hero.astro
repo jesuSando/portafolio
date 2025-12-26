@@ -7,7 +7,7 @@ import { Github, Linkedin } from "lucide-react";
     class="min-h-screen container mx-auto flex flex-col lg:flex-row items-center justify-center gap-5 px-8"
 >
     <div
-         class="w-full lg:flex-3 mt-20 flex flex-col items-center lg:items-end justify-center transition-all duration-700"
+        class="w-full lg:flex-3 mt-20 flex flex-col items-center lg:items-end justify-center transition-all duration-700"
     >
         <div
             class="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] rounded-full flex items-end justify-center"
@@ -29,7 +29,7 @@ import { Github, Linkedin } from "lucide-react";
             </div>
 
             <h2
-                class="absolute bottom-[-25px] sm:bottom-[-20px] text-5xl lg:text-7xl text-[var(--text-color)] font-bold text-start drop-shadow-xl z-3"
+                class="absolute bottom-[-25px] sm:bottom-[-20px] text-5xl lg:text-7xl text-white font-bold text-start drop-shadow-xl z-3"
             >
                 Jesús Sandoval
             </h2>
@@ -42,17 +42,13 @@ import { Github, Linkedin } from "lucide-react";
                     }`}
     >
         <div class="mb-2 mt-10 lg:mt-0 lg:mb-4">
-            <h1
-                class="text-5xl lg:text-7xl font-light text-[var(--text-color)] mb-2"
-            >
+            <h1 class="text-5xl lg:text-7xl font-light text-white mb-2">
                 Hola, soy
             </h1>
         </div>
 
         <div>
-            <h2
-                class="text-3xl lg:text-6xl font-semibold text-[var(--text-color)]"
-            >
+            <h2 class="text-3xl lg:text-6xl font-semibold text-white">
                 Desarrollador{" "}
                 <span class="gradient-text-purple font-bold"> Full Stack </span>
             </h2>
@@ -63,32 +59,32 @@ import { Github, Linkedin } from "lucide-react";
                 <div class="flex gap-5">
                     <a
                         href={"https://github.com/jesuSando/"}
-                        class="flex items-center justify-center bg-[var(--primary-900)] border border-[var(--primary-800)] text-[var(--primary-400)] font-bold p-3 rounded-full"
+                        class="flex items-center justify-center rounded-full bg-blue-900/20 border border-blue-800 text-blue-400 hover:bg-blue-900/40 hover:border-blue-600 p-3 font-semibold transition-all duration-300"
                         title="GitHub"
                     >
                         <Github />
                     </a>
                     <a
                         href={"https://www.linkedin.com/in/jesús-sandoval-martínez-983112292"}
-                        class="flex items-center justify-center bg-[var(--secondary-900)] border border-[var(--secondary-800)] text-[var(--secondary-400)] font-bold p-3 rounded-full"
+                        class="flex items-center justify-center rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 p-3 font-semibold transition-all duration-300"
                         title="Linkedin"
                     >
                         <Linkedin />
                     </a>
                 </div>
 
-                <div
-                    class="inline-flex items-center bg-[var(--accent-900)] border border-[var(--accent-800)] px-4 py-2 rounded-xl"
+                <a
+                    href="#projects"
+                    class="inline-flex items-center px-4 py-2 rounded-xl
+                    bg-gradient-to-r from-emerald-900/30 to-emerald-900/20 backdrop-blur-sm border border-emerald-800"
                 >
-                    <span class="text-[var(--accent-400)] font-medium text-lg">
+                    <span class="text-green-400 font-medium text-lg">
                         Disponible para Proyectos
                     </span>
-                </div>
+                </a>
             </div>
 
-            <p
-                class="text-xl text-[var(--text-color)] leading-relaxed max-w-[600px]"
-            >
+            <p class="text-xl text-white leading-relaxed max-w-[600px]">
                 Analista Programador especializado en desarrollo web, creando
                 soluciones eficientes y prácticas. Explora mis proyectos y
                 habilidades aquí.
@@ -96,26 +92,16 @@ import { Github, Linkedin } from "lucide-react";
 
             <div class="flex justify-center lg:justify-start gap-6 py-4">
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[var(--primary-400)]">
-                        8+
-                    </div>
-                    <div class="text-sm text-[var(--muted-400)]">
-                        Meses Exp.
-                    </div>
+                    <div class="text-2xl font-bold text-blue-400">8+</div>
+                    <div class="text-sm text-gray-400">Meses Exp.</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[var(--secondary-400)]">
-                        15+
-                    </div>
-                    <div class="text-sm text-[var(--muted-400)]">Proyectos</div>
+                    <div class="text-2xl font-bold text-cyan-400">15+</div>
+                    <div class="text-sm text-gray-400">Proyectos</div>
                 </div>
                 <div class="text-center">
-                    <div class="text-2xl font-bold text-[var(--accent-400)]">
-                        19+
-                    </div>
-                    <div class="text-sm text-[var(--muted-400)]">
-                        Tecnologías
-                    </div>
+                    <div class="text-2xl font-bold text-green-400">19+</div>
+                    <div class="text-sm text-gray-400">Tecnologías</div>
                 </div>
             </div>
         </div>
@@ -124,7 +110,7 @@ import { Github, Linkedin } from "lucide-react";
             <a
                 href="#projects"
                 aria-label="Ir a proyectos"
-                class="flex items-center justify-center px-5 py-3 rounded-full text-lg border-2 border-[var(--secondary-400)] bg-[var(--secondary-400)] hover:bg-[var(--secondary-800)] transition-colors duration-200"
+                class="flex items-center justify-center rounded-full bg-amber-900/20 border border-amber-800 text-amber-400 hover:bg-amber-900/40 hover:border-amber-600 px-6 py-3 font-semibold transition-all duration-300"
             >
                 Explorar Proyectos
             </a>
@@ -133,9 +119,17 @@ import { Github, Linkedin } from "lucide-react";
                 href="/docs/CV_Jesus_Sandoval.pdf"
                 download="CV_Jesus_sandoval.pdf"
                 aria-label="Descargar CV"
-                class="flex items-center justify-center px-5 py-3 rounded-full text-lg border-2 border-[var(--highlight-400)] hover:bg-[var(--highlight-400)] transition-all duration-200"
+                class="flex items-center justify-center rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 px-6 py-3 font-semibold transition-all duration-300"
             >
                 Descargar CV
+            </a>
+
+            <a
+                href="#contact"
+                aria-label="Contactarme"
+                class="flex items-center justify-center rounded-full bg-blue-900/20 border border-blue-800 text-blue-400 hover:bg-blue-900/40 hover:border-blue-600 px-6 py-3 font-semibold transition-all duration-300"
+            >
+                Contactar
             </a>
         </div>
     </div>
