@@ -1,0 +1,177 @@
+---
+import * as icon from "lucide-react";
+const stack = [
+  {
+    title: "Frontend",
+    items: [
+      { name: "HTML5", icon: "/logos/html5.svg" },
+      { name: "CSS3", icon: "/logos/css3.svg" },
+      { name: "JavaScript", icon: "/logos/javascript.svg" },
+      { name: "TypeScript", icon: "/logos/typescript.svg" },
+      { name: "Tailwind CSS", icon: "/logos/tailwindcss.svg" },
+      { name: "Sass", icon: "/logos/sass.svg" },
+      { name: "React", icon: "/logos/react.svg" },
+      { name: "Next.js", icon: "/logos/nextjs.svg" },
+      { name: "Angular", icon: "/logos/angular.svg" },
+    ],
+  },
+  {
+    title: "Backend",
+    items: [
+      { name: "Node.js", icon: "/logos/nodejs.svg" },
+      { name: "Express.js", icon: "/logos/express.svg" },
+      { name: "Sequelize", icon: "/logos/sequelize.svg" },
+      { name: "MySQL", icon: "/logos/mysql.svg" },
+      { name: "MongoDB", icon: "/logos/mongodb.svg" },
+      { name: "NestJS", icon: "/logos/nest.svg" },
+    ],
+  },
+  {
+    title: "Herramientas",
+    items: [
+      { name: "Git", icon: "/logos/git.svg" },
+      { name: "GitHub", icon: "/logos/github.svg" },
+      { name: "VS Code", icon: "/logos/vscode.svg" },
+      { name: "Postman", icon: "/logos/postman.svg" },
+      { name: "Linux", icon: "/logos/linux.svg" },
+      { name: "Docker", icon: "/logos/docker.svg" },
+      { name: "Firebase", icon: "/logos/firebase.svg" },
+    ],
+  },
+  {
+    title: "Extras",
+    items: [
+      { name: "Photoshop", icon: "/logos/photoshop.svg" },
+      { name: "Illustrator", icon: "/logos/illustrator.svg" },
+      { name: "Premiere Pro", icon: "/logos/premierepro.svg" },
+      { name: "After Effects", icon: "/logos/aftereffects.svg" },
+    ],
+  },
+];
+---
+
+<section id="stack" class="min-h-screen container mx-auto px-6 md:px-20 py-20 space-y-10">
+  <h2 class="text-2xl md:text-5xl font-bold gradient-text-green py-3">
+    Stack Tecnológico
+  </h2>
+  <p class="text-xl">
+    Tecnologías y herramientas que utilizo para crear experiencias web modernas
+    y escalables
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <div
+      class="md:col-span-4 p-6 rounded-2xl transition-all duration-300
+                    bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-emerald-500/30
+                    hover:shadow-2xl shadow-emerald-500/30"
+    >
+      <h3 class="mb-6 text-xl md:text-2xl font-semibold gradient-text-purple">
+        {stack[0].title}
+      </h3>
+
+      <div
+        class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(90px,1fr))]"
+      >
+        {
+          stack[0].items.map((tech) => (
+            <div
+              class="group flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-emerald-500/30
+                    hover:shadow-2xl shadow-emerald-500/30"
+            >
+              <img
+                src={tech.icon}
+                alt={tech.name}
+                class="h-10 w-auto transition-transform group-hover:scale-110"
+              />
+              <span class="text-xs font-medium text-center">{tech.name}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="md:col-span-4 p-6 rounded-2xl transition-all duration-300
+                    bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-blue-500/30
+                    hover:shadow-2xl shadow-blue-500/30"
+    >
+      <h3 class="mb-6 text-xl md:text-2xl font-semibold gradient-text-purple">
+        {stack[1].title}
+      </h3>
+
+      <div
+        class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(90px,1fr))]"
+      >
+        {
+          stack[1].items.map((tech) => (
+            <div
+              class="group flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-blue-500/30
+                    hover:shadow-2xl shadow-blue-500/30"
+            >
+              <img src={tech.icon} alt={tech.name} class="h-10 w-auto" />
+              <span class="text-xs font-medium text-center">{tech.name}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div
+      class="md:col-span-4 p-6 rounded-2xl transition-all duration-300
+                    bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-cyan-500/30
+                    hover:shadow-2xl shadow-cyan-500/30"
+    >
+      <h3 class="mb-6 text-xl md:text-2xl font-semibold gradient-text-purple">
+        {stack[2].title}
+      </h3>
+
+      <div
+        class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(90px,1fr))]"
+      >
+        {
+          stack[2].items.map((tech) => (
+            <div
+              class="group flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-cyan-500/30
+                    hover:shadow-2xl shadow-cyan-500/30"
+            >
+              <img src={tech.icon} alt={tech.name} class="h-10 w-auto" />
+              <span class="text-xs font-medium text-center">{tech.name}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- <div
+      class="md:col-span-6 p-6 rounded-2xl transition-all duration-300
+                    bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-purple-500/30
+                    hover:shadow-2xl shadow-purple-500/30"
+    >
+      <h3 class="mb-6 text-xl font-semibold">{stack[3].title}</h3>
+
+      <div
+        class="grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(90px,1fr))]"
+      >
+        {
+          stack[3].items.map((tech) => (
+            <div
+              class="group flex flex-col items-center justify-center gap-2 rounded-xl p-4 transition hover:scale-105 bg-white/5 backdrop-blur-sm border border-white/10
+                    hover:bg-white/10 hover:border-purple-500/30
+                    hover:shadow-2xl shadow-purple-500/30"
+            >
+              <img src={tech.icon} alt={tech.name} class="h-10 w-auto" />
+              <span class="text-xs font-medium text-center">{tech.name}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div> -->
+  </div>
+</section>

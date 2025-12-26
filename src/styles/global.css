@@ -47,9 +47,30 @@ main {
   min-height: 100vh;
 }
 
-.gradient-text {
+.gradient-text-purple {
   color: transparent;
+  background-image: linear-gradient(to right,
+      #60a5fa,
+      /* blue-400 */
+      #818cf8,
+      /* indigo-400 */
+      #a855f7
+      /* purple-500 */
+    );
   background-clip: text;
   -webkit-background-clip: text;
-  background-image: linear-gradient(to right, var(--color-blue-400), var(--color-purple-500));
+}
+
+.gradient-text-green {
+  color: transparent;
+  background-image: linear-gradient(to right,
+      #60a5fa,
+      /* blue-400 */
+      #22d3ee,
+      /* cyan-400 */
+      #10b981
+      /* emerald-500 */
+    );
+  background-clip: text;
+  -webkit-background-clip: text;
 }
