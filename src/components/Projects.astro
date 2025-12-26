@@ -3,52 +3,61 @@ import * as icon from "lucide-react";
 
 const projects = [
     {
-        title: "poyecto-1",
-        description: "Descripción del proyecto 1",
-        details: "Descripción detallada del proyecto 1",
+        title: "Ritmo Web",
+        description: "Dashboard web para gestión personal y productividad",
+        details:
+            "Aplicación web desarrollada en Next.js con Tailwind CSS. Incluye login, manejo de sesión persistente mediante cookies y endpoint /api/me, dashboard interactivo para tareas, rutinas y finanzas, y visualización de estadísticas. Diseño responsive y componentes reutilizables, enfocado en una experiencia clara y funcional.",
         demo: "#",
-        repo: "#",
-        stack: ["1221", "daddq", "dwqdqw"],
-        image: "/logos/typescript.svg",
+        repo: "https://github.com/jesuSando/Ritmo-app",
+        stack: ["Next.js", "JavaScript", "Tailwind CSS"],
+        image: "/projects/ritmo-frontend.png",
     },
     {
-        title: "poyecto-1",
-        description: "Descripción del proyecto 1",
-        details: "Descripción detallada del proyecto 1",
-        demo: "#",
-        repo: "#",
-        stack: ["1221", "daddq", "dwqdqw"],
-        image: "/logos/typescript.svg",
+        title: "Ekonomi App",
+        description: "App móvil para control de finanzas personales",
+        details:
+            "Registro de ingresos y gastos, presupuesto mensual, alertas por email, gráficos por categoría, exportación de reportes en PDF y chatbot en tiempo real con Gemini API.",
+        repo: "https://github.com/BMolinae/Front-Ekonomi/tree/limite",
+        stack: ["Angular", "Ionic", "Firebase", "TypeScript", "Gemini API"],
+        image: "/projects/ekonomi.png",
     },
 ];
 
 const moreProjects = [
     {
-        title: "poyecto-1",
-        description: "Descripción del proyecto 1",
-        details: "Descripción detallada del proyecto 1",
-        demo: "#",
-        repo: "#",
-        stack: ["1221", "daddq", "dwqdqw"],
-        image: "/logos/typescript.svg",
+        title: "Ritmo Backend",
+        description: "API REST para gestión avanzada de tareas y finanzas",
+        details:
+            "Backend en Node.js y Express con autenticación por cookies. Permite gestionar tareas programadas y rutinas con control de solapamiento (forzar, ignorar o reemplazar), finanzas personales con ingresos, gastos y límite mensual, estadísticas por rangos de tiempo y filtros. Incluye middlewares de seguridad, rate limit, CORS restringido, manejo centralizado de errores y migraciones con Sequelize. Funcionalidades colaborativas en desarrollo.",
+        repo: "https://github.com/jesuSando/Ritmo.git",
+        stack: [
+            "Node.js",
+            "Express",
+            "Sequelize",
+            "MySQL",
+            "Cookies",
+            "Helmet",
+        ],
+        image: "/projects/ritmo-backend.png",
     },
     {
-        title: "poyecto-1",
-        description: "Descripción del proyecto 1",
-        details: "Descripción detallada del proyecto 1",
-        demo: "#",
-        repo: "#",
-        stack: ["1221", "daddq", "dwqdqw"],
-        image: "/logos/typescript.svg",
+        title: "Explosive Method Backend",
+        description: "Backend para plataforma de entrenamiento con roles",
+        details:
+            "API REST desarrollada en Node.js y Express para una aplicación de gimnasio. Implementa control de acceso por roles (admin, entrenador y usuario), gestión de videos de rutinas almacenados en el servidor, códigos de invitación para registro controlado y limitación de consumo de contenido por usuario. El acceso a los recursos se valida según estado del usuario y reglas de negocio. Proyecto en desarrollo con futuras rutinas escritas.",
+        repo: "https://github.com/jesuSando/backend-explosive-method.git",
+        stack: ["Node.js", "Express", "Sequelize", "MySQL"],
+        image: "/projects/explosive-method-backend.png",
     },
     {
-        title: "poyecto-1",
-        description: "Descripción del proyecto 1",
-        details: "Descripción detallada del proyecto 1",
-        demo: "#",
-        repo: "#",
-        stack: ["1221", "daddq", "dwqdqw"],
-        image: "/logos/typescript.svg",
+        title: "Multiempresa Dashboard",
+        description: "Maqueta de dashboard modular multiempresa",
+        details:
+            "Concepto de dashboard web orientado a la gestión multiempresa, con estructura modular para distintos tipos de secciones y roles. Enfocado en diseño de interfaz, jerarquía visual y experiencia de usuario. Proyecto conceptual en evolución.",
+        demo: "https://acme-dashboard-app.netlify.app/",
+        repo: "https://github.com/jesuSando/acme-dashboard.git",
+        stack: ["Next.js", "Tailwind CSS", "Shadcn UI"],
+        image: "/projects/acme-dashboard.png",
     },
 ];
 ---
@@ -70,12 +79,12 @@ const moreProjects = [
                 return (
                     <div
                         class="flex-1 rounded-2xl transition-all duration-300
-                    bg-white/5 backdrop-blur-sm border border-white/10"
+                    bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden"
                     >
                         <div class="relative h-100 overflow-hidden group">
                             <div
                                 class="absolute inset-0 z-10 pointer-events-none
-                                bg-linear-to-t from-black/70 to-transparent
+                                bg-linear-to-t from-black/90 to-transparent
                                 opacity-0 transition-opacity duration-300
                                 group-hover:opacity-100 flex items-end p-4"
                             >
@@ -87,7 +96,7 @@ const moreProjects = [
                                 alt={project.title}
                                 class="w-full h-full object-cover
                                 transition-transform duration-300
-                                group-hover:scale-110"
+                                group-hover:scale-105"
                             />
                         </div>
                         <div class="p-6 space-y-4">
@@ -95,7 +104,7 @@ const moreProjects = [
                                 {project.title}
                             </h3>
                             <p class="text-gray-300">{project.description}</p>
-                            <div class="flex space-x-2">
+                            <div class="flex flex-wrap gap-2">
                                 {project.stack.map((tech) => (
                                     <span class="px-2 py-1 bg-white/10 rounded-lg text-sm text-gray-300">
                                         {tech}
@@ -103,21 +112,24 @@ const moreProjects = [
                                 ))}
                             </div>
                             <div class="flex space-x-4 mt-6">
-                                <a
-                                    href={project.repo}
-                                    class="flex items-center justify-center gap-2 rounded-full bg-amber-900/20 border border-amber-800 text-amber-400 hover:bg-amber-900/40 hover:border-amber-600 px-6 py-3 font-semibold transition-all duration-300"
-                                >
-                                    <icon.Github className="h-5 w-5" />
-                                    Código
-                                </a>
-
-                                <a
-                                    href={project.demo}
-                                    class="flex items-center justify-center gap-2 rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 px-6 py-3 font-semibold transition-all duration-300"
-                                >
-                                    <icon.ExternalLink className="h-5 w-5" />
-                                    Live Demo
-                                </a>
+                                {project.repo && (
+                                    <a
+                                        href={project.repo}
+                                        class="flex items-center justify-center gap-2 rounded-full bg-amber-900/20 border border-amber-800 text-amber-400 hover:bg-amber-900/40 hover:border-amber-600 px-6 py-3 font-semibold transition-all duration-300"
+                                    >
+                                        <icon.Github className="h-5 w-5" />
+                                        Código
+                                    </a>
+                                )}
+                                {project.demo && (
+                                    <a
+                                        href={project.demo}
+                                        class="flex items-center justify-center gap-2 rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 px-6 py-3 font-semibold transition-all duration-300"
+                                    >
+                                        <icon.ExternalLink className="h-5 w-5" />
+                                        Live Demo
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
@@ -134,12 +146,12 @@ const moreProjects = [
                 return (
                     <div
                         class="flex-1 rounded-2xl transition-all duration-300
-                    bg-white/5 backdrop-blur-sm border border-white/10"
+                    bg-white/5 backdrop-blur-sm border border-white/10 overflow-hidden"
                     >
                         <div class="relative h-100 overflow-hidden group">
                             <div
                                 class="absolute inset-0 z-10 pointer-events-none
-                                bg-linear-to-t from-black/70 to-transparent
+                                bg-linear-to-t from-black/90 to-transparent
                                 opacity-0 transition-opacity duration-300
                                 group-hover:opacity-100 flex items-end p-4"
                             >
@@ -159,7 +171,7 @@ const moreProjects = [
                                 {project.title}
                             </h3>
                             <p class="text-gray-300">{project.description}</p>
-                            <div class="flex space-x-2">
+                            <div class="flex flex-wrap gap-2">
                                 {project.stack.map((tech) => (
                                     <span class="px-2 py-1 bg-white/10 rounded-lg text-sm text-gray-300">
                                         {tech}
@@ -167,21 +179,25 @@ const moreProjects = [
                                 ))}
                             </div>
                             <div class="flex space-x-4 mt-10">
-                                <a
-                                    href={project.repo}
-                                    class="flex items-center justify-center gap-2 rounded-full bg-amber-900/20 border border-amber-800 text-amber-400 hover:bg-amber-900/40 hover:border-amber-600 px-6 py-3 font-semibold transition-all duration-300"
-                                >
-                                    <icon.Github className="h-5 w-5" />
-                                    Código
-                                </a>
+                                {project.repo && (
+                                    <a
+                                        href={project.repo}
+                                        class="flex items-center justify-center gap-2 rounded-full bg-amber-900/20 border border-amber-800 text-amber-400 hover:bg-amber-900/40 hover:border-amber-600 px-6 py-3 font-semibold transition-all duration-300"
+                                    >
+                                        <icon.Github className="h-5 w-5" />
+                                        Código
+                                    </a>
+                                )}
 
-                                <a
-                                    href={project.demo}
-                                    class="flex items-center justify-center gap-2 rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 px-6 py-3 font-semibold transition-all duration-300"
-                                >
-                                    <icon.ExternalLink className="h-5 w-5" />
-                                    Live Demo
-                                </a>
+                                {project.demo && (
+                                    <a
+                                        href={project.demo}
+                                        class="flex items-center justify-center gap-2 rounded-full bg-cyan-900/20 border border-cyan-800 text-cyan-400 hover:bg-cyan-900/40 hover:border-cyan-600 px-6 py-3 font-semibold transition-all duration-300"
+                                    >
+                                        <icon.ExternalLink className="h-5 w-5" />
+                                        Live Demo
+                                    </a>
+                                )}
                             </div>
                         </div>
                     </div>
