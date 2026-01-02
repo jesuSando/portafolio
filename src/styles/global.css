@@ -51,26 +51,32 @@ main {
   color: transparent;
   background-image: linear-gradient(to right,
       #60a5fa,
-      /* blue-400 */
       #818cf8,
-      /* indigo-400 */
-      #a855f7
-      /* purple-500 */
-    );
+      #a855f7);
   background-clip: text;
   -webkit-background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
 }
 
 .gradient-text-green {
   color: transparent;
   background-image: linear-gradient(to right,
       #60a5fa,
-      /* blue-400 */
       #22d3ee,
-      /* cyan-400 */
-      #10b981
-      /* emerald-500 */
-    );
+      #10b981);
   background-clip: text;
   -webkit-background-clip: text;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
 }
