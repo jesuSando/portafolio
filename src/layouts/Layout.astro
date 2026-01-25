@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Navbar from "../components/Navbar";
+import background from "../assets/circle.svg";
+import background2 from "../assets/circle2.svg";
 ---
 
 <!doctype html>
@@ -8,12 +9,24 @@ import Navbar from "../components/Navbar";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Jesús Sandoval</title>
 	</head>
-	<body>
-		<main>	
+
+	<body class="relative min-h-screen bg-black overflow-x-hidden">
+		<img
+			src={background.src}
+			class="fixed inset-0 w-full h-full object-cover blur-[100px] opacity-70
+         pointer-events-none z-0 animate-pulse [animation-duration:18s]"
+		/>
+
+		<img
+			src={background2.src}
+			class="fixed inset-0 w-full h-full object-cover blur-[100px] opacity-70
+         pointer-events-none z-0 animate-pulse [animation-duration:26s]"
+		/>
+		<main class="relative z-10">
 			<slot />
 		</main>
 	</body>
