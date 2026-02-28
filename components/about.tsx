@@ -3,18 +3,18 @@ import { MapPin, Calendar, Coffee } from "lucide-react"
 const highlights = [
   {
     icon: MapPin,
-    label: "Based in",
-    value: "San Francisco, CA",
+    label: "Located in",
+    value: "Santiago, CL",
   },
   {
     icon: Calendar,
     label: "Experience",
-    value: "5+ years",
+    value: "1+ years",
   },
   {
     icon: Coffee,
     label: "Fueled by",
-    value: "Curiosity & Coffee",
+    value: "Curiosity & Energy",
   },
 ]
 
@@ -25,9 +25,7 @@ export function About() {
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              About
-              <br />
-              Me
+              About Me
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
@@ -41,22 +39,13 @@ export function About() {
           <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-8 lg:col-span-2">
             <div className="flex flex-col gap-5">
               <p className="text-lg leading-relaxed text-foreground">
-                I&apos;m a full-stack developer who thrives at the intersection
-                of design and engineering. I believe the best products come from
-                understanding both the technical constraints and the human needs
-                behind every feature.
+                I&apos;m a computer programmer analyst and currently a student of Computer Engineering. I enjoy learning on my own and experimenting with systems.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                My journey started building small tools to automate mundane
-                tasks, which quickly grew into a passion for crafting complete
-                digital experiences. Today I focus on React ecosystems, modern
-                deployment workflows, and creating interfaces that feel
-                effortless to use.
+                I have worked on real projects, both in development and maintenance of production systems, which has taught me to adapt and find solutions in high-pressure situations.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                When I&apos;m not coding, you&apos;ll find me exploring open-source
-                projects, writing technical articles, or experimenting with new
-                frameworks before they hit the mainstream.
+                Outside of coding, I am interested in continuous learning, physical training, and exploring creative ideas.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -86,12 +75,10 @@ export function About() {
                 Philosophy
               </span>
               <h3 className="text-lg font-semibold text-foreground">
-                Ship fast, iterate often
+                Curiosity is my engine
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                I believe in getting ideas in front of users quickly, learning
-                from real feedback, and refining until the experience feels
-                right.
+                Curiosity is what drives me. If something interests me, I get to the bottom of it. I don't just scratch the surface.
               </p>
             </div>
             <div className="flex flex-1 flex-col gap-3 rounded-2xl border border-border bg-secondary/30 p-6">
@@ -99,12 +86,10 @@ export function About() {
                 Approach
               </span>
               <h3 className="text-lg font-semibold text-foreground">
-                Design-driven development
+                Clarity first
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Great code should serve great design. I work closely with
-                designers to translate vision into pixel-perfect, performant
-                reality.
+                If it's not clear, it's not ready yet.
               </p>
             </div>
           </div>

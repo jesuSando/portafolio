@@ -19,13 +19,13 @@ export function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_oklch(0.72_0.12_180/0.08)_0%,_transparent_70%)]" />
 
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground">
+        {/* <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
           Available for new projects
-        </div>
+        </div> */}
 
         <h1 className="text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
           Crafting Digital
@@ -45,11 +45,10 @@ export function Hero() {
               key={tech.label}
               onMouseEnter={() => setHoveredTech(tech.label)}
               onMouseLeave={() => setHoveredTech(null)}
-              className={`cursor-default rounded-full px-4 py-1.5 text-sm font-medium transition-all ${
-                hoveredTech === tech.label
+              className={`cursor-default rounded-full px-4 py-1.5 text-sm font-medium transition-all ${hoveredTech === tech.label
                   ? "bg-accent text-accent-foreground"
                   : "bg-secondary text-muted-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               {tech.label}
             </span>
