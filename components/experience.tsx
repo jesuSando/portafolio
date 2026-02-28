@@ -120,7 +120,7 @@ export function Experience() {
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Experience & Education
+              Experience
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
@@ -130,38 +130,13 @@ export function Experience() {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col gap-4 justify-center">
-            <ExperienceCard experience={experiences[4]} featured/>
-            <ExperienceCard experience={experiences[1]} featured/>
+            <ExperienceCard experience={experiences[4]} featured />
+            <ExperienceCard experience={experiences[1]} featured />
             <ExperienceCard experience={experiences[0]} />
           </div>
           <div className="flex flex-col gap-4 justify-center">
             <ExperienceCard experience={experiences[3]} />
             <ExperienceCard experience={experiences[2]} />
-          </div>
-        </div>
-
-        <div className="mt-8 flex items-center justify-center">
-          <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-8 py-5">
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-foreground">1+</span>
-              <span className="text-xs text-muted-foreground">
-                Year of Experience
-              </span>
-            </div>
-            <div className="h-8 w-px bg-border" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-foreground">15+</span>
-              <span className="text-xs text-muted-foreground">
-                Projects Delivered
-              </span>
-            </div>
-            <div className="h-8 w-px bg-border" />
-            <div className="flex flex-col items-center gap-1">
-              <span className="text-2xl font-bold text-foreground">2</span>
-              <span className="text-xs text-muted-foreground">
-                Companies
-              </span>
-            </div>
           </div>
         </div>
       </div>
