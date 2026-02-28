@@ -1,44 +1,53 @@
 "use client";
 
-import { ArrowUpRight, ChevronsLeftRightEllipsis } from "lucide-react"
+import { ArrowUpRight } from "lucide-react"
 import { useState } from "react"
 
 const experiences = [
   {
     title: "Full-Stack Developer",
     company: "WIT Innovación y Tecnología",
-    period: "2025 - Present",
+    period: "2025 - 2026",
     description:
-      "Development and implementation of technological solutions for the transportation sector, from backend to field deployment.",
+      "Development and implementation of technological solutions for the transportation sector, from backend to field deployment. I participated in the creation of administrative panels and seat reservation systems, integrating payment portals and developing internal tools to optimize processes. I also collaborated in the installation and configuration of self-service kiosks and POS terminals, as well as technical support and infrastructure implementation.",
     tags: ["Next.js", "TypeScript", "React", "Node.js", "Express"],
     href: "https://wit.la/",
   },
   {
-    title: "Full-Stack Developer",
-    company: "Stripe",
-    period: "2022 - 2024",
+    title: "Freelance Developer",
+    company: "Self-employed",
+    period: "2024 - Present",
     description:
-      "Developed payment integrations and dashboard experiences. Built internal tools that improved engineering velocity.",
-    tags: ["React", "Node.js", "PostgreSQL"],
-    href: "#",
+      "Independent development of web solutions for clients, from concept to delivery. I have built static sites, data-driven administrative panels, and custom backends, including business logic for a gym application. I work autonomously, defining structure, database, and deployment according to the needs of each project.",
+    tags: ["React Native", "Node.js", "MySQL", "Firebase"],
+    href: "https://www.workana.com/",
   },
   {
-    title: "Frontend Developer",
-    company: "Linear",
+    title: "Video Editor",
+    company: "Digital Content Creator",
     period: "2020 - 2022",
     description:
-      "Crafted pixel-perfect interfaces and smooth animations. Contributed to the design system and component library.",
-    tags: ["React", "TypeScript", "CSS"],
+      "Production and editing of audiovisual content during the pandemic, working directly with a YouTube creator. I was responsible for editing videos and visual pieces using Premiere Pro, After Effects, and Photoshop, developing aesthetic criteria, visual narrative management, and discipline in delivering under defined deadlines.",
+    tags: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
     href: "#",
   },
   {
-    title: "Junior Developer",
-    company: "Startup Studio",
-    period: "2019 - 2020",
+    title: "Intern - Student",
+    company: "Duoc UC",
+    period: "2023 - 2025",
     description:
-      "Shipped MVPs for multiple early-stage startups. Built responsive web apps from design mockups to production deployments.",
-    tags: ["JavaScript", "React", "Firebase"],
-    href: "#",
+      "Formal education in software development, consolidating strong technical and methodological foundations. During my degree in Computer Programming Analysis, I strengthened my programming and web development fundamentals. Although my internship was development-oriented, I took on system installation (including my first experience with Linux), equipment configuration, and on-site troubleshooting — an early exposure to technology beyond code.",
+    tags: ["Linux", "Bash", "Technical Support", "Team Collaboration"],
+    href: "https://www.duoc.cl/",
+  },
+  {
+    title: "Computer Engineering Student",
+    company: "Universidad Andrés Bello",
+    period: "2026 - Present",
+    description:
+      "Currently pursuing a degree in Computer Engineering to deepen my theoretical foundations and strengthen my long-term technical vision. This stage focuses on advanced systems, software architecture, and engineering-level problem solving to complement my technical background.",
+    tags: ["Algorithms", "Data Structures", "Software Engineering", "Systems"],
+    href: "https://www.unab.cl/",
   },
 ]
 
@@ -115,18 +124,19 @@ export function Experience() {
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            From intern to team member at leading technology companies, each position has honed my craft.
+            A progression shaped by curiosity, hands-on experience, and a constant drive to understand how systems really work.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div className="flex flex-col gap-4">
-            <ExperienceCard experience={experiences[0]} featured />
+          <div className="flex flex-col gap-4 justify-center">
+            <ExperienceCard experience={experiences[0]} />
             <ExperienceCard experience={experiences[2]} />
-          </div>
-          <div className="flex flex-col gap-4">
             <ExperienceCard experience={experiences[1]} />
+          </div>
+          <div className="flex flex-col gap-4 justify-center">
             <ExperienceCard experience={experiences[3]} featured />
+            <ExperienceCard experience={experiences[4]} featured />
           </div>
         </div>
 
