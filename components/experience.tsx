@@ -7,7 +7,7 @@ const experiences = [
   {
     title: "Full-Stack Developer",
     company: "WIT Innovación y Tecnología",
-    period: "2025 - 2026",
+    period: "2025 - May 2026",
     description:
       "Development and implementation of technological solutions for the transportation sector, from backend to field deployment. I participated in the creation of administrative panels and seat reservation systems, integrating payment portals and developing internal tools to optimize processes. I also collaborated in the installation and configuration of self-service kiosks and POS terminals, as well as technical support and infrastructure implementation.",
     tags: ["Next.js", "TypeScript", "React", "Node.js", "Express"],
@@ -120,7 +120,7 @@ export function Experience() {
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Work Experience
+              Experience & Education
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
@@ -130,13 +130,13 @@ export function Experience() {
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col gap-4 justify-center">
+            <ExperienceCard experience={experiences[4]} featured/>
+            <ExperienceCard experience={experiences[1]} featured/>
             <ExperienceCard experience={experiences[0]} />
-            <ExperienceCard experience={experiences[2]} />
-            <ExperienceCard experience={experiences[1]} />
           </div>
           <div className="flex flex-col gap-4 justify-center">
-            <ExperienceCard experience={experiences[3]} featured />
-            <ExperienceCard experience={experiences[4]} featured />
+            <ExperienceCard experience={experiences[3]} />
+            <ExperienceCard experience={experiences[2]} />
           </div>
         </div>
 
