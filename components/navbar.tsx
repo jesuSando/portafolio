@@ -21,7 +21,7 @@ export function Navbar() {
           className="text-lg font-bold tracking-tight text-foreground"
         >
           {'<'}
-          <span className="text-accent">alex</span>
+          <span className="text-accent">jesuSando</span>
           {' />'}
         </a>
 
