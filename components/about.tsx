@@ -9,7 +9,7 @@ const highlights = [
   {
     icon: Calendar,
     label: "Experience",
-    value: "1+ years",
+    value: "1+ year",
   },
   {
     icon: Coffee,
