@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { ArrowDown } from "lucide-react"
 import LightRays from "./background"
+import { useLanguage } from "@/context/LanguageContext"
 
 const techStack = [
   { label: "GitHub", href: "https://github.com/jesuSando" },
@@ -12,6 +13,7 @@ const techStack = [
 
 export function Hero() {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
+  const { t } = useLanguage();
 
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-17">
@@ -35,13 +37,13 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
         <h1 className="text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">
-          Designing logic
+          Jesús Sandoval
           <br />
-          <span className="text-accent">Building impact</span>
+          <span className="text-accent">Full-Stack Dev</span>
         </h1>
 
         <p className="max-w-lg text-pretty text-lg leading-relaxed text-muted-foreground">
-          I build structured, scalable systems — from internal tools to full-stack applications — turning complex ideas into reliable software.
+          {t.hero.description}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-border bg-secondary/50 px-4 py-3">
@@ -65,7 +67,7 @@ export function Hero() {
           href="#projects"
           className="mt-4 inline-flex items-center gap-2 rounded-full bg-foreground px-8 py-3 text-sm font-medium text-background transition-opacity hover:opacity-90"
         >
-          Explore my work
+          {t.hero.cta}
           <ArrowDown className="h-4 w-4" />
         </a>
       </div>

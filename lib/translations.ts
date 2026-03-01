@@ -1,5 +1,9 @@
 export const translations = {
   en: {
+    hero: {
+      description: "I build structured, scalable systems — from internal tools to full-stack applications — turning complex ideas into reliable software.",
+      cta: "Explore my work",
+    },
     footer: {
       title: "Let's Build Something Together",
       subtitle: "If you have an idea, let's turn it into something real.",
@@ -36,6 +40,10 @@ export const translations = {
   },
 
   es: {
+    hero: {
+      description: "Construyo sistemas estructurados y escalables — desde herramientas internas hasta aplicaciones full-stack — transformando ideas complejas en software confiable.",
+      cta: "Explora mi trabajo",
+    },
     footer: {
       title: "Construyamos Algo Juntos",
       subtitle: "Si tienes una idea, hagámosla realidad.",
