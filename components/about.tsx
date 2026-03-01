@@ -1,57 +1,59 @@
+"use client"
 import { MapPin, Calendar, Coffee } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
-const highlights = [
-  {
-    icon: MapPin,
-    label: "Located in",
-    value: "Santiago, CL",
-  },
-  {
-    icon: Calendar,
-    label: "Experience",
-    value: "1+ years",
-  },
-  {
-    icon: Coffee,
-    label: "Fueled by",
-    value: "Curiosity & Structure",
-  },
-]
 
 export function About() {
+  const { t } = useLanguage();
+
+  const highlights = [
+    {
+      icon: MapPin,
+      label: [t.about.highlights.locatedIn.label],
+      value: [t.about.highlights.locatedIn.value],
+    },
+    {
+      icon: Calendar,
+      label: [t.about.highlights.experience.label],
+      value: [t.about.highlights.experience.value],
+    },
+    {
+      icon: Coffee,
+      label: [t.about.highlights.fueledBy.label],
+      value: [t.about.highlights.fueledBy.value],
+    },
+  ]
   return (
     <section id="about" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              About Me
+              {t.about.title}
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            A glimpse into who I am beyond the code. Passionate about building
-            tools that make a real difference.
+            {t.about.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-          {/* Main bio card - spans 2 cols */}
           <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-8 lg:col-span-2">
             <div className="flex flex-col gap-5">
               <p className="text-lg leading-relaxed text-foreground">
-                I’m a Computer Programming Analyst and currently studying Computer Engineering. I’m deeply interested in how systems are designed, structured, and scaled.
+                {t.about.bio.paragraph1}
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                I’ve worked on production-level projects, contributing to both development and system deployment. These experiences taught me to stay adaptable, think structurally, and solve problems under real-world constraints.
+                {t.about.bio.paragraph2}
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Beyond code, I’m driven by continuous learning, physical training, and building ideas that challenge me technically and creatively.
+                {t.about.bio.paragraph3}
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
-              {highlights.map((item) => (
+              {highlights.map((item, index) => (
                 <div
-                  key={item.label}
+                  key={index}
                   className="flex items-center gap-3 rounded-xl bg-secondary/60 px-4 py-3"
                 >
                   <item.icon className="h-4 w-4 text-accent" />
@@ -68,28 +70,27 @@ export function About() {
             </div>
           </div>
 
-          {/* Side column - values */}
           <div className="flex flex-col gap-4">
             <div className="flex flex-1 flex-col gap-3 rounded-2xl border border-border bg-secondary/30 p-6">
               <span className="text-xs font-medium uppercase tracking-wider text-accent">
-                Philosophy
+                {t.about.philosophy.label}
               </span>
               <h3 className="text-lg font-semibold text-foreground">
-                Curiosity is my engine
+                {t.about.philosophy.title}
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                When something sparks my interest, I explore it deeply — understanding not only how it works, but why it was built that way.
+                {t.about.philosophy.description}
               </p>
             </div>
             <div className="flex flex-1 flex-col gap-3 rounded-2xl border border-border bg-secondary/30 p-6">
               <span className="text-xs font-medium uppercase tracking-wider text-accent">
-                Approach
+                {t.about.approach.label}
               </span>
               <h3 className="text-lg font-semibold text-foreground">
-                Clarity first
+                {t.about.approach.title}
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Clarity before complexity.
+                {t.about.approach.description}
               </p>
             </div>
           </div>
