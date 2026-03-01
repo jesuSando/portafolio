@@ -4,18 +4,9 @@ import Image from "next/image"
 import { Github, Linkedin, Mail, Instagram } from "lucide-react"
 import { useState, useEffect } from "react"
 
-const footerLinks = {
-  Navigation: [
-    { label: "Projects", href: "#projects" },
-    { label: "Experience", href: "#experience" },
-    { label: "About", href: "#about" },
-  ],
-  Social: [
-    { label: "GitHub", href: "https://github.com/jesuSando" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
-    { label: "Instagram", href: "https://www.instagram.com/vzzaroo" },
-  ],
-}
+import { LanguageSwitch } from "./LanguageSwitch"
+import { useLanguage } from "@/context/LanguageContext"
+
 
 const socialIcons = [
   { Icon: Github, href: "https://github.com/jesuSando", label: "GitHub" },
@@ -25,6 +16,7 @@ const socialIcons = [
 ]
 
 export function Footer() {
+  const { t } = useLanguage();
   const [email, setEmail] = useState("")
   const [idea, setIdea] = useState("")
   const [loading, setLoading] = useState(false)
@@ -54,16 +46,29 @@ export function Footer() {
     }
   }, [errors])
 
+  const footerLinks = {
+    [t.footer.navigation]: [
+      { label: t.footer.links.projects, href: "#projects" },
+      { label: t.footer.links.experience, href: "#experience" },
+      { label: t.footer.links.about, href: "#about" },
+    ],
+    [t.footer.social]: [
+      { label: t.footer.links.github, href: "https://github.com/jesuSando" },
+      { label: t.footer.links.linkedin, href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
+      { label: t.footer.links.instagram, href: "https://www.instagram.com/vzzaroo" },
+    ],
+  }
+
   return (
     <footer id="contact" className="border-t border-border px-6 py-16">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 className="text-2xl font-bold text-foreground">
-              Let&apos;s Build Something Together
+              {t.footer.title}
             </h2>
             <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-              If you have an idea, let's turn it into something real.
+              {t.footer.subtitle}
             </p>
           </div>
           <div className="flex gap-3">
@@ -82,22 +87,22 @@ export function Footer() {
 
         {status === "success" && (
           <p className="mb-2 text-sm text-accent text-end">
-            Message sent successfully
+            {t.footer.success}
           </p>
         )}
 
         {status === "error" && (
           <p className="mb-2 text-sm text-red-500 text-end">
-            Something went wrong. Please try again.
+            {t.footer.error}
           </p>
         )}
         <div className="mb-12 flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-sm font-semibold text-foreground">
-              Send me a message
+              {t.footer.contactTitle}
             </h3>
             <p className="mt-1 text-sm text-muted-foreground">
-              I usually reply within a day.
+              {t.footer.contactSubtitle}
             </p>
           </div>
 
@@ -137,7 +142,7 @@ export function Footer() {
             <div className=" relative flex flex-col">
               <input
                 type="email"
-                placeholder="your@email.com"
+                placeholder={t.footer.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className={`rounded-full border bg-secondary px-4 py-2 text-sm 
@@ -152,11 +157,10 @@ export function Footer() {
               )}
             </div>
 
-            {/* IDEA */}
             <div className="relative flex flex-col">
               <input
                 type="text"
-                placeholder="what do you have in mind?"
+                placeholder={t.footer.ideaPlaceholder}
                 value={idea}
                 onChange={(e) => setIdea(e.target.value)}
                 className={`rounded-full border bg-secondary px-4 py-2 text-sm 
@@ -179,7 +183,7 @@ export function Footer() {
               className="rounded-full bg-accent px-6 py-2 text-sm font-medium text-accent-foreground 
       transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? `${t.footer.sending}` : `${t.footer.send}`}
             </button>
           </form>
         </div>
@@ -197,7 +201,7 @@ export function Footer() {
                 {' />'}
               </a>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                Building products, systems and occasionally games.
+                {t.footer.brandDescription}
               </p>
             </div>
 
@@ -221,21 +225,25 @@ export function Footer() {
               </div>
             ))}
 
-            <div className="border border-border bg-card w-fit rounded-full">
+            {/* <div className="border border-border bg-card w-fit rounded-full">
               <Image
                 src="/images/yoshi.png"
                 alt="Description"
                 width={120}
                 height={120}
               />
+            </div> */}
+
+            <div>
+              <LanguageSwitch />
             </div>
           </div>
         </div>
 
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
-          <p>&copy; 2026 Jesús Sandoval. All rights reserved.</p>
-          <p className="font-mono text-xs">Thx 4 reading :p</p>
+          <p>&copy; {t.footer.copyright}</p>
+          <p className="font-mono text-xs">{t.footer.closing}</p>
         </div>
       </div>
     </footer>
