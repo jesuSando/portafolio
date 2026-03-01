@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowDown } from "lucide-react"
+import LightRays from "./background"
 
 const techStack = [
   { label: "GitHub", href: "https://github.com/jesuSando" },
@@ -13,8 +14,24 @@ export function Hero() {
   const [hoveredTech, setHoveredTech] = useState<string | null>(null)
 
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-20">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_oklch(0.72_0.12_180/0.08)_0%,_transparent_70%)]" />
+    <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-17">
+      <div className="absolute inset-0 ">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#ffffff"
+          raysSpeed={0.5}
+          lightSpread={0.5}
+          rayLength={1.5}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0}
+          distortion={0}
+          className="custom-rays"
+          pulsating={false}
+          fadeDistance={1}
+          saturation={1}
+        />
+      </div>
 
       <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
         <h1 className="text-balance text-5xl font-bold leading-tight tracking-tight text-foreground md:text-7xl">

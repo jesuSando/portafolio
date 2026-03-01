@@ -9,7 +9,7 @@ const experiences = [
     company: "WIT Innovación y Tecnología",
     period: "2025 - May 2026",
     description:
-      "Development and implementation of technological solutions for the transportation sector, from backend to field deployment. I participated in the creation of administrative panels and seat reservation systems, integrating payment portals and developing internal tools to optimize processes. I also collaborated in the installation and configuration of self-service kiosks and POS terminals, as well as technical support and infrastructure implementation.",
+      "Contributed to the development and deployment of technological solutions for the transportation sector. Built administrative panels and seat reservation systems, integrated payment gateways, and developed internal tools to streamline operations. I also participated in field installations of self-service kiosks and POS terminals, gaining hands-on experience beyond pure software development.",
     tags: ["Next.js", "TypeScript", "React", "Node.js", "Express"],
     href: "https://wit.la/",
   },
@@ -18,7 +18,7 @@ const experiences = [
     company: "Self-employed",
     period: "2024 - Present",
     description:
-      "Independent development of web solutions for clients, from concept to delivery. I have built static sites, data-driven administrative panels, and custom backends, including business logic for a gym application. I work autonomously, defining structure, database, and deployment according to the needs of each project.",
+      "Developed web solutions independently, handling architecture, database design, and deployment. Built static websites, CRUD-based administrative panels, and custom backends — including business logic for a gym management application. Freelancing strengthened my autonomy, decision-making, and end-to-end ownership of projects.",
     tags: ["React Native", "Node.js", "MySQL", "Firebase"],
     href: "https://www.workana.com/",
   },
@@ -27,7 +27,7 @@ const experiences = [
     company: "Digital Content Creator",
     period: "2020 - 2022",
     description:
-      "Production and editing of audiovisual content during the pandemic, working directly with a YouTube creator. I was responsible for editing videos and visual pieces using Premiere Pro, After Effects, and Photoshop, developing aesthetic criteria, visual narrative management, and discipline in delivering under defined deadlines.",
+      "Worked as a video editor for a YouTube creator during the pandemic, producing and refining audiovisual content using Premiere Pro, After Effects, and Photoshop. This stage strengthened my visual criteria, storytelling awareness, and discipline in delivering under tight deadlines — skills that later influenced my approach to product design and development.",
     tags: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
     href: "#",
   },
@@ -36,7 +36,7 @@ const experiences = [
     company: "Duoc UC",
     period: "2023 - 2025",
     description:
-      "Formal education in software development, consolidating strong technical and methodological foundations. During my degree in Computer Programming Analysis, I strengthened my programming and web development fundamentals. Although my internship was development-oriented, I took on system installation (including my first experience with Linux), equipment configuration, and on-site troubleshooting — an early exposure to technology beyond code.",
+      "Completed formal education in Computer Programming Analysis, building strong foundations in software development. Although my internship was development-oriented, I worked on system installations (including my first experience with Linux), equipment configuration, and on-site troubleshooting — an early exposure to infrastructure and real-world technical environments.",
     tags: ["Linux", "Bash", "Technical Support", "Team Collaboration"],
     href: "https://www.duoc.cl/",
   },

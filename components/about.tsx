@@ -9,12 +9,12 @@ const highlights = [
   {
     icon: Calendar,
     label: "Experience",
-    value: "1+ year",
+    value: "1+ years",
   },
   {
     icon: Coffee,
     label: "Fueled by",
-    value: "Curiosity & Energy",
+    value: "Curiosity & Structure",
   },
 ]
 
@@ -39,13 +39,13 @@ export function About() {
           <div className="flex flex-col justify-between gap-6 rounded-2xl border border-border bg-card p-8 lg:col-span-2">
             <div className="flex flex-col gap-5">
               <p className="text-lg leading-relaxed text-foreground">
-                I&apos;m a computer programmer analyst and currently a student of Computer Engineering. I enjoy learning on my own and experimenting with systems.
+                I’m a Computer Programming Analyst and currently studying Computer Engineering. I’m deeply interested in how systems are designed, structured, and scaled.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                I have worked on real projects, both in development and maintenance of production systems, which has taught me to adapt and find solutions in high-pressure situations.
+                I’ve worked on production-level projects, contributing to both development and system deployment. These experiences taught me to stay adaptable, think structurally, and solve problems under real-world constraints.
               </p>
               <p className="leading-relaxed text-muted-foreground">
-                Outside of coding, I am interested in continuous learning, physical training, and exploring creative ideas.
+                Beyond code, I’m driven by continuous learning, physical training, and building ideas that challenge me technically and creatively.
               </p>
             </div>
             <div className="flex flex-wrap gap-4">
@@ -78,7 +78,7 @@ export function About() {
                 Curiosity is my engine
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Curiosity is what drives me. If something interests me, I get to the bottom of it. I don't just scratch the surface.
+                When something sparks my interest, I explore it deeply — understanding not only how it works, but why it was built that way.
               </p>
             </div>
             <div className="flex flex-1 flex-col gap-3 rounded-2xl border border-border bg-secondary/30 p-6">
@@ -89,7 +89,7 @@ export function About() {
                 Clarity first
               </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                If it's not clear, it's not ready yet.
+                Clarity before complexity.
               </p>
             </div>
           </div>
