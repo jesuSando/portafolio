@@ -41,6 +41,56 @@ export const translations = {
         description: "Clarity before complexity.",
       },
     },
+    experience: {
+      title: "Experience",
+      subtitle:
+        "A progression shaped by curiosity, hands-on experience, and a constant drive to understand how systems really work.",
+
+      seeMore: "See more",
+      seeLess: "See less",
+
+      experiences: {
+        wit: {
+          title: "Full-Stack Developer",
+          company: "WIT Innovación y Tecnología",
+          period: "2025 - May 2026",
+          description:
+            "Contributed to the development and deployment of technological solutions for the transportation sector. Built administrative panels and seat reservation systems, integrated payment gateways, and developed internal tools to streamline operations. I also participated in field installations of self-service kiosks and POS terminals, gaining hands-on experience beyond pure software development.",
+        },
+
+        freelance: {
+          title: "Freelance Developer",
+          company: "Self-employed",
+          period: "2024 - Present",
+          description:
+            "Developed web solutions independently, handling architecture, database design, and deployment. Built static websites, CRUD-based administrative panels, and custom backends — including business logic for a gym management application. Freelancing strengthened my autonomy, decision-making, and end-to-end ownership of projects.",
+        },
+
+        editor: {
+          title: "Video Editor",
+          company: "Digital Content Creator",
+          period: "2020 - 2022",
+          description:
+            "Worked as a video editor for a YouTube creator during the pandemic, producing and refining audiovisual content using Premiere Pro, After Effects, and Photoshop. This stage strengthened my visual criteria, storytelling awareness, and discipline in delivering under tight deadlines — skills that later influenced my approach to product design and development.",
+        },
+
+        intern: {
+          title: "Intern - Student",
+          company: "Duoc UC",
+          period: "2023 - 2025",
+          description:
+            "Completed formal education in Computer Programming Analysis, building strong foundations in software development. Although my internship was development-oriented, I worked on system installations (including my first experience with Linux), equipment configuration, and on-site troubleshooting — an early exposure to infrastructure and real-world technical environments.",
+        },
+
+        engineering: {
+          title: "Computer Engineering Student",
+          company: "Universidad Andrés Bello",
+          period: "2026 - Present",
+          description:
+            "Currently pursuing a degree in Computer Engineering to deepen my theoretical foundations and strengthen my long-term technical vision. This stage focuses on advanced systems, software architecture, and engineering-level problem solving to complement my technical background.",
+        },
+      },
+    },
     footer: {
       title: "Let's Build Something Together",
       subtitle: "If you have an idea, let's turn it into something real.",
@@ -120,6 +170,56 @@ export const translations = {
         label: "Enfoque",
         title: "Claridad primero",
         description: "Claridad antes que complejidad.",
+      },
+    },
+    experience: {
+      title: "Experiencia",
+      subtitle:
+        "Una trayectoria marcada por la curiosidad, la experiencia práctica y el impulso constante por comprender cómo funcionan realmente los sistemas.",
+
+      seeMore: "Ver más",
+      seeLess: "Ver menos",
+
+      experiences: {
+        wit: {
+          title: "Desarrollador Full-Stack",
+          company: "WIT Innovación y Tecnología",
+          period: "2025 - Mayo 2026",
+          description:
+            "Contribuí al desarrollo y despliegue de soluciones tecnológicas para el sector del transporte. Construí paneles administrativos y sistemas de reserva de asientos, integré pasarelas de pago y desarrollé herramientas internas para optimizar operaciones. También participé en instalaciones en terreno de kioscos de autoservicio y terminales POS, obteniendo experiencia práctica más allá del desarrollo de software puro.",
+        },
+
+        freelance: {
+          title: "Desarrollador Freelance",
+          company: "Independiente",
+          period: "2024 - Presente",
+          description:
+            "Desarrollé soluciones web de manera independiente, encargándome de la arquitectura, diseño de base de datos y despliegue. Construí sitios web estáticos, paneles administrativos CRUD y backends personalizados — incluyendo lógica de negocio para una aplicación de gestión de gimnasio. El trabajo freelance fortaleció mi autonomía, toma de decisiones y responsabilidad total sobre los proyectos.",
+        },
+
+        editor: {
+          title: "Editor de Video",
+          company: "Creador de Contenido Digital",
+          period: "2020 - 2022",
+          description:
+            "Trabajé como editor de video para un creador de YouTube durante la pandemia, produciendo y refinando contenido audiovisual utilizando Premiere Pro, After Effects y Photoshop. Esta etapa fortaleció mi criterio visual, narrativa y disciplina para cumplir plazos exigentes — habilidades que luego influyeron en mi enfoque hacia el diseño y desarrollo de productos.",
+        },
+
+        intern: {
+          title: "Practicante - Estudiante",
+          company: "Duoc UC",
+          period: "2023 - 2025",
+          description:
+            "Completé mi formación en Analista Programador, construyendo bases sólidas en desarrollo de software. Aunque mi práctica estuvo orientada al desarrollo, trabajé en instalaciones de sistemas (incluyendo mi primera experiencia con Linux), configuración de equipos y soporte en terreno — una exposición temprana a infraestructura y entornos técnicos reales.",
+        },
+
+        engineering: {
+          title: "Estudiante de Ingeniería en Computación",
+          company: "Universidad Andrés Bello",
+          period: "2026 - Presente",
+          description:
+            "Actualmente cursando Ingeniería en Computación para profundizar mis bases teóricas y fortalecer mi visión técnica a largo plazo. Esta etapa se enfoca en sistemas avanzados, arquitectura de software y resolución de problemas a nivel de ingeniería para complementar mi experiencia técnica.",
+        },
       },
     },
     footer: {

@@ -2,61 +2,27 @@
 
 import { ArrowUpRight } from "lucide-react"
 import { useState } from "react"
+import { useLanguage } from "@/context/LanguageContext"
 
-const experiences = [
-  {
-    title: "Full-Stack Developer",
-    company: "WIT Innovación y Tecnología",
-    period: "2025 - May 2026",
-    description:
-      "Contributed to the development and deployment of technological solutions for the transportation sector. Built administrative panels and seat reservation systems, integrated payment gateways, and developed internal tools to streamline operations. I also participated in field installations of self-service kiosks and POS terminals, gaining hands-on experience beyond pure software development.",
-    tags: ["Next.js", "TypeScript", "React", "Node.js", "Express"],
-    href: "https://wit.la/",
-  },
-  {
-    title: "Freelance Developer",
-    company: "Self-employed",
-    period: "2024 - Present",
-    description:
-      "Developed web solutions independently, handling architecture, database design, and deployment. Built static websites, CRUD-based administrative panels, and custom backends — including business logic for a gym management application. Freelancing strengthened my autonomy, decision-making, and end-to-end ownership of projects.",
-    tags: ["React Native", "Node.js", "MySQL", "Firebase"],
-    href: "https://www.workana.com/",
-  },
-  {
-    title: "Video Editor",
-    company: "Digital Content Creator",
-    period: "2020 - 2022",
-    description:
-      "Worked as a video editor for a YouTube creator during the pandemic, producing and refining audiovisual content using Premiere Pro, After Effects, and Photoshop. This stage strengthened my visual criteria, storytelling awareness, and discipline in delivering under tight deadlines — skills that later influenced my approach to product design and development.",
-    tags: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
-    href: "#",
-  },
-  {
-    title: "Intern - Student",
-    company: "Duoc UC",
-    period: "2023 - 2025",
-    description:
-      "Completed formal education in Computer Programming Analysis, building strong foundations in software development. Although my internship was development-oriented, I worked on system installations (including my first experience with Linux), equipment configuration, and on-site troubleshooting — an early exposure to infrastructure and real-world technical environments.",
-    tags: ["Linux", "Bash", "Technical Support", "Team Collaboration"],
-    href: "https://www.duoc.cl/",
-  },
-  {
-    title: "Computer Engineering Student",
-    company: "Universidad Andrés Bello",
-    period: "2026 - Present",
-    description:
-      "Currently pursuing a degree in Computer Engineering to deepen my theoretical foundations and strengthen my long-term technical vision. This stage focuses on advanced systems, software architecture, and engineering-level problem solving to complement my technical background.",
-    tags: ["Algorithms", "Data Structures", "Software Engineering", "Systems"],
-    href: "https://www.unab.cl/",
-  },
-]
+type ExperienceItem = {
+  title: string
+  company: string
+  period: string
+  description: string
+  tags: string[]
+  href: string
+}
 
 function ExperienceCard({
   experience,
   featured = false,
+  seeMore,
+  seeLess,
 }: {
-  experience: (typeof experiences)[number]
+  experience: ExperienceItem
   featured?: boolean
+  seeMore: string
+  seeLess: string
 }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -93,7 +59,7 @@ function ExperienceCard({
                 onClick={() => setExpanded(!expanded)}
                 className="text-accent ml-1 cursor-pointer"
               >
-                {expanded ? "See less" : "See more"}
+                {expanded ? seeLess : seeMore}
               </button>
             </>
           )}
@@ -114,29 +80,73 @@ function ExperienceCard({
 }
 
 export function Experience() {
+  const { t } = useLanguage()
+  const experiences = [
+    {
+      title: t.experience.experiences.wit.title,
+      company: t.experience.experiences.wit.company,
+      period: t.experience.experiences.wit.period,
+      description: t.experience.experiences.wit.description,
+      tags: ["Next.js", "TypeScript", "React", "Node.js", "Express"],
+      href: "https://wit.la/",
+    },
+    {
+      title: t.experience.experiences.freelance.title,
+      company: t.experience.experiences.freelance.company,
+      period: t.experience.experiences.freelance.period,
+      description: t.experience.experiences.freelance.description,
+      tags: ["React Native", "Node.js", "MySQL", "Firebase"],
+      href: "https://www.workana.com/",
+    },
+    {
+      title: t.experience.experiences.editor.title,
+      company: t.experience.experiences.editor.company,
+      period: t.experience.experiences.editor.period,
+      description: t.experience.experiences.editor.description,
+      tags: ["Premiere Pro", "After Effects", "Photoshop", "Illustrator"],
+      href: "#",
+    },
+    {
+      title: t.experience.experiences.intern.title,
+      company: t.experience.experiences.intern.company,
+      period: t.experience.experiences.intern.period,
+      description: t.experience.experiences.intern.description,
+      tags: ["Linux", "Bash", "Technical Support", "Team Collaboration"],
+      href: "https://www.duoc.cl/",
+    },
+    {
+      title: t.experience.experiences.engineering.title,
+      company: t.experience.experiences.engineering.company,
+      period: t.experience.experiences.engineering.period,
+      description: t.experience.experiences.engineering.description,
+      tags: ["Algorithms", "Data Structures", "Software Engineering", "Systems"],
+      href: "https://www.unab.cl/",
+    },
+  ]
+
   return (
     <section id="experience" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Experience
+              {t.experience.title}
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            A progression shaped by curiosity, hands-on experience, and a constant drive to understand how systems really work.
+            {t.experience.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex flex-col gap-4 justify-center">
-            <ExperienceCard experience={experiences[4]} featured />
-            <ExperienceCard experience={experiences[1]} featured />
-            <ExperienceCard experience={experiences[0]} />
+            <ExperienceCard experience={experiences[4]} featured seeMore={t.experience.seeMore} seeLess={t.experience.seeLess} />
+            <ExperienceCard experience={experiences[1]} featured seeMore={t.experience.seeMore} seeLess={t.experience.seeLess} />
+            <ExperienceCard experience={experiences[0]} seeMore={t.experience.seeMore} seeLess={t.experience.seeLess} />
           </div>
           <div className="flex flex-col gap-4 justify-center">
-            <ExperienceCard experience={experiences[3]} />
-            <ExperienceCard experience={experiences[2]} />
+            <ExperienceCard experience={experiences[3]} seeMore={t.experience.seeMore} seeLess={t.experience.seeLess} />
+            <ExperienceCard experience={experiences[2]} seeMore={t.experience.seeMore} seeLess={t.experience.seeLess} />
           </div>
         </div>
       </div>
