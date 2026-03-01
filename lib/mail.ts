@@ -4,15 +4,15 @@ import nodemailer from "nodemailer"
 export const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.NEXT_PUBLIC_EMAIL_USER,
+        pass: process.env.NEXT_PUBLIC_EMAIL_PASS,
     },
 })
 
 export async function sendContactEmail(email: string, idea: string) {
     return transporter.sendMail({
-        from: `"jesuSando Portfolio 🚀" <${process.env.EMAIL_USER}>`,
-        to: process.env.EMAIL_USER,
+        from: `"jesuSando Portfolio 🚀" <${process.env.NEXT_PUBLIC_EMAIL_USER}>`,
+        to: process.env.NEXT_PUBLIC_EMAIL_USER,
         replyTo: email,
         subject: `New Portfolio Contact from ${email}`,
         html: contactTemplate(email, idea),
