@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { Github, Linkedin, Mail, Instagram } from "lucide-react"
 import { useState } from "react"
 
@@ -14,12 +15,12 @@ const footerLinks = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
     { label: "Instagram", href: "https://www.instagram.com/vzzaroo" },
   ],
-  Resources: [
-    { label: "Blog", href: "#" },
-    { label: "Resume", href: "#" },
-    { label: "Uses", href: "#" },
-    { label: "Bookmarks", href: "#" },
-  ],
+  // Resources: [
+  //   { label: "Blog", href: "#" },
+  //   { label: "Resume", href: "#" },
+  //   { label: "Uses", href: "#" },
+  //   { label: "Bookmarks", href: "#" },
+  // ],
 }
 
 const socialIcons = [
@@ -69,7 +70,7 @@ export function Footer() {
             </p>
           </div>
           <form
-            className="flex gap-2"
+            className="flex flex-col gap-4 rounded-2xl md:flex-row md:items-center md:justify-between"
             onSubmit={(e) => {
               e.preventDefault()
               setEmail("")
@@ -136,6 +137,15 @@ export function Footer() {
                 </ul>
               </div>
             ))}
+
+            <div className="border border-border bg-card w-fit rounded-full">
+              <Image
+                src="/images/yoshi.png"
+                alt="Description"
+                width={120}
+                height={120}
+              />
+            </div>
           </div>
         </div>
 
