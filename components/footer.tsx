@@ -15,12 +15,6 @@ const footerLinks = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
     { label: "Instagram", href: "https://www.instagram.com/vzzaroo" },
   ],
-  // Resources: [
-  //   { label: "Blog", href: "#" },
-  //   { label: "Resume", href: "#" },
-  //   { label: "Uses", href: "#" },
-  //   { label: "Bookmarks", href: "#" },
-  // ],
 }
 
 const socialIcons = [
