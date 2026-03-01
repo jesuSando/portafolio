@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { Github, Linkedin, Mail, Instagram } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const footerLinks = {
   Navigation: [
@@ -27,7 +27,32 @@ const socialIcons = [
 export function Footer() {
   const [email, setEmail] = useState("")
   const [idea, setIdea] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
+  const [errors, setErrors] = useState<{
+    email?: string[]
+    idea?: string[]
+  }>({})
 
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const timer = setTimeout(() => {
+        setStatus("idle")
+      }, 4000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [status])
+
+  useEffect(() => {
+    if (Object.keys(errors).length > 0) {
+      const timer = setTimeout(() => {
+        setErrors({})
+      }, 4000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [errors])
 
   return (
     <footer id="contact" className="border-t border-border px-6 py-16">
@@ -54,6 +79,18 @@ export function Footer() {
             ))}
           </div>
         </div>
+
+        {status === "success" && (
+          <p className="mb-2 text-sm text-accent text-end">
+            Message sent successfully
+          </p>
+        )}
+
+        {status === "error" && (
+          <p className="mb-2 text-sm text-red-500 text-end">
+            Something went wrong. Please try again.
+          </p>
+        )}
         <div className="mb-12 flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 md:flex-row md:items-center md:justify-between">
           <div>
             <h3 className="text-sm font-semibold text-foreground">
@@ -63,38 +100,90 @@ export function Footer() {
               I usually reply within a day.
             </p>
           </div>
+
           <form
             className="flex flex-col gap-4 rounded-2xl md:flex-row md:items-center md:justify-between"
-            onSubmit={(e) => {
+            onSubmit={async (e) => {
               e.preventDefault()
-              setEmail("")
-              setIdea("")
+
+              setLoading(true)
+              setStatus("idle")
+              setErrors({})
+
+              const res = await fetch("/api/send", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, idea }),
+              })
+
+              const data = await res.json()
+              setLoading(false)
+
+              if (res.ok) {
+                setStatus("success")
+                setEmail("")
+                setIdea("")
+              } else {
+                if (res.status === 400 && data.error?.fieldErrors) {
+                  setErrors(data.error.fieldErrors)
+                } else if (res.status === 429) {
+                  setStatus("error")
+                } else {
+                  setStatus("error")
+                }
+              }
             }}
           >
-            <input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none"
-              required
-            />
-            <input
-              type="text"
-              placeholder="what do you have in mind?"
-              value={idea}
-              onChange={(e) => setIdea(e.target.value)}
-              className="rounded-full border border-border bg-secondary px-4 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-accent focus:outline-none"
-              required
-            />
+            <div className=" relative flex flex-col">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={`rounded-full border bg-secondary px-4 py-2 text-sm 
+        ${errors.email ? "border-red-500" : "border-border"}
+      `}
+                required
+              />
+              {errors.email && (
+                <p className="absolute bottom-10 text-xs text-red-500">
+                  {errors.email[0]}
+                </p>
+              )}
+            </div>
+
+            {/* IDEA */}
+            <div className="relative flex flex-col">
+              <input
+                type="text"
+                placeholder="what do you have in mind?"
+                value={idea}
+                onChange={(e) => setIdea(e.target.value)}
+                className={`rounded-full border bg-secondary px-4 py-2 text-sm 
+        ${errors.idea ? "border-red-500" : "border-border"}
+      `}
+                required
+              />
+              {errors.idea && (
+                <p className="absolute bottom-10 text-xs text-red-500">
+                  {errors.idea[0]}
+                </p>
+              )}
+            </div>
+
+            <input type="hidden" name="company" />
+
             <button
               type="submit"
-              className="rounded-full bg-accent px-6 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90"
+              disabled={loading}
+              className="rounded-full bg-accent px-6 py-2 text-sm font-medium text-accent-foreground 
+      transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Send
+              {loading ? "Sending..." : "Send"}
             </button>
           </form>
         </div>
+
 
         <div className="mb-12 border-t border-border pt-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
