@@ -10,9 +10,9 @@ const footerLinks = {
     { label: "About", href: "#about" },
   ],
   Social: [
-    { label: "GitHub", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "GitHub", href: "https://github.com/jesuSando" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
+    { label: "Instagram", href: "https://www.instagram.com/vzzaroo" },
   ],
   Resources: [
     { label: "Blog", href: "#" },
