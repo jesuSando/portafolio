@@ -1,4 +1,5 @@
 "use client"
+import { de } from "date-fns/locale"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
@@ -9,15 +10,17 @@ const projects = [
     description: "A custom DSL-powered engine for generating structured PDF documents declaratively. Designed to describe complex layouts through a domain-specific language, separating document structure from rendering logic.",
     image: "/images/backend.png",
     tags: ["Node.js", "TypeScript", "DSL", "PDF Generation", "npm"],
-    href: "#",
+    code: "https://github.com/jesuSando/StructPDF.git",
+    demo: null,
     size: "large" as const,
   },
   {
-    title: "Mercado UI",
-    description: "E-commerce design system with reusable components.",
-    image: "/images/project-2.jpg",
-    tags: ["React", "Tailwind", "Storybook"],
-    href: "#",
+    title: "Ritmo",
+    description: "Personal productivity app with a custom backend and multi-platform frontend (Next.js + React Native). Built with a focus on structured data flow and long-term scalability.",
+    image: "/images/ritmo-web.png",
+    tags: ["Next.js", "React Native", "Node.js", "Express", "Sequelize"],
+    code: "#",
+    demo: "#",
     size: "large" as const,
   },
   {
@@ -76,7 +79,24 @@ function ProjectCard({
           <h3 className="text-lg font-semibold text-foreground">
             {project.title}
           </h3>
-          <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+          <div className="flex items-center gap-2">
+            {project.demo && (
+              <a
+                className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90 md:inline-flex flex items-center gap-1 cursor-pointer"
+                href={project.demo}>
+                Demo
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-accent-foreground" />
+              </a>
+            )}
+            {project.code && (
+              <a
+                className="rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90 md:inline-flex flex items-center gap-1 cursor-pointer"
+                href={project.code}>
+                Code
+                <ArrowUpRight className="h-4 w-4 shrink-0 text-accent-foreground" />
+              </a>
+            )}
+          </div>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           {expanded ? project.description : truncatedDescription}
