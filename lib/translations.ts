@@ -91,6 +91,74 @@ export const translations = {
         },
       },
     },
+    projects: {
+      title: "Featured Projects",
+      subtitle:
+        "Selected projects where I explore systems thinking, architecture design, and experimental ideas — from developer tools to autonomous simulations.",
+
+      projects: {
+        pdf: {
+          title: "Declarative PDF Engine",
+          description:
+            "A custom DSL-powered engine for generating structured PDF documents declaratively. Designed to describe complex layouts through a domain-specific language, separating document structure from rendering logic.",
+        },
+
+        ritmo: {
+          title: "Ritmo",
+          description:
+            "Ritmo is a structured life management system that integrates productivity, routines, financial control and personal tracking into a single cohesive architecture.",
+
+          web: {
+            title: "Ritmo Web",
+            description:
+              "The web client built with Next.js acts as the primary dashboard interface, providing calendar-based task visualization, financial summaries and routine management.",
+            badge: "Developing",
+          },
+
+          mobile: {
+            title: "Ritmo Mobile",
+            description:
+              "The React Native mobile app focuses on daily execution: marking tasks complete, logging habits, tracking expenses and receiving scheduled notifications.",
+            badge: "Developing",
+          },
+
+          backend: {
+            title: "Ritmo Backend",
+            description:
+              "Backend built with Node.js, Express and Sequelize managing financial accounts, recurring transactions, routines, dependency graphs and notifications.",
+          },
+        },
+
+        email: {
+          title: "Dynamic Email Service",
+          description:
+            "A provider-agnostic email microservice supporting Nodemailer and SendGrid through a unified payload structure with template and attachment support.",
+        },
+
+        ekonomi: {
+          title: "Ekonomi App",
+          description:
+            "A budgeting and expense management app with monthly limits and an integrated contextual chatbot restricted to domain-specific queries.",
+        },
+
+        gladiator: {
+          title: "GladIAtor",
+          description:
+            "A real-time autonomous combat simulation where AI-driven gladiators learn, adapt and suffer permanent consequences.",
+        },
+      },
+      seeMore: "See more",
+      seeLess: "See less",
+
+      viewSource: "View source code",
+      viewDemo: "View live demo",
+      previousItem: "Previous item",
+      nextItem: "Next item",
+
+      badges: {
+        developing: "Developing",
+      },
+    },
     footer: {
       title: "Let's Build Something Together",
       subtitle: "If you have an idea, let's turn it into something real.",
@@ -220,6 +288,74 @@ export const translations = {
           description:
             "Actualmente cursando Ingeniería en Computación para profundizar mis bases teóricas y fortalecer mi visión técnica a largo plazo. Esta etapa se enfoca en sistemas avanzados, arquitectura de software y resolución de problemas a nivel de ingeniería para complementar mi experiencia técnica.",
         },
+      },
+    },
+    projects: {
+      title: "Proyectos Destacados",
+      subtitle:
+        "Proyectos seleccionados donde exploro pensamiento sistémico, diseño de arquitectura e ideas experimentales — desde herramientas para desarrolladores hasta simulaciones autónomas.",
+
+      projects: {
+        pdf: {
+          title: "Motor PDF Declarativo",
+          description:
+            "Un motor impulsado por un DSL personalizado para generar documentos PDF estructurados de forma declarativa. Diseñado para describir layouts complejos mediante un lenguaje específico de dominio, separando la estructura del documento de la lógica de renderizado.",
+        },
+
+        ritmo: {
+          title: "Ritmo",
+          description:
+            "Ritmo es un sistema estructurado de gestión de vida que integra productividad, rutinas, control financiero y seguimiento personal dentro de una arquitectura cohesiva. Diseñado en torno a integridad relacional de datos, lógica basada en tiempo y patrones backend escalables.",
+
+          web: {
+            title: "Ritmo Web",
+            description:
+              "Cliente web construido con Next.js que actúa como panel principal. Ofrece visualización de tareas basada en calendario, resúmenes financieros, control de presupuestos y gestión de rutinas.",
+            badge: "En desarrollo",
+          },
+
+          mobile: {
+            title: "Ritmo Mobile",
+            description:
+              "Aplicación móvil en React Native enfocada en la ejecución diaria: completar tareas, registrar hábitos, controlar gastos en tiempo real y recibir notificaciones programadas.",
+            badge: "En desarrollo",
+          },
+
+          backend: {
+            title: "Ritmo Backend",
+            description:
+              "Backend construido con Node.js, Express y Sequelize. Gestiona usuarios, cuentas financieras, presupuestos, transacciones recurrentes, rutinas con resolución de conflictos y un sistema de notificaciones en cola.",
+          },
+        },
+
+        email: {
+          title: "Servicio de Email Dinámico",
+          description:
+            "Microservicio de email agnóstico al proveedor que soporta Nodemailer y SendGrid mediante una estructura de payload unificada, con soporte de templates y archivos adjuntos.",
+        },
+
+        ekonomi: {
+          title: "Ekonomi App",
+          description:
+            "Aplicación de presupuesto y control de gastos con límites mensuales y un chatbot contextual integrado restringido a consultas del dominio financiero.",
+        },
+
+        gladiator: {
+          title: "GladIAtor",
+          description:
+            "Simulación de combate autónomo en tiempo real donde gladiadores impulsados por IA aprenden, se adaptan y sufren consecuencias permanentes.",
+        },
+      },
+      seeMore: "Ver más",
+      seeLess: "Ver menos",
+
+      viewSource: "Ver código fuente",
+      viewDemo: "Ver demo en vivo",
+      previousItem: "Elemento anterior",
+      nextItem: "Siguiente elemento",
+
+      badges: {
+        developing: "En desarrollo",
       },
     },
     footer: {

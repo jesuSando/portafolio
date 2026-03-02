@@ -2,6 +2,7 @@
 import { ArrowUpRight, ChevronLeft, ChevronRight, Code2, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { useLanguage } from "@/context/LanguageContext"
 
 type ProjectItem = {
   title: string
@@ -23,67 +24,16 @@ type Project = {
   size: "small" | "medium" | "large"
 }
 
-const projects: Project[] = [
-  {
-    title: "Declarative PDF Engine",
-    description: "A custom DSL-powered engine for generating structured PDF documents declaratively. Designed to describe complex layouts through a domain-specific language, separating document structure from rendering logic.",
-    image: "/images/backend.png",
-    tags: ["Node.js", "TypeScript", "DSL", "PDF Generation", "npm"],
-    code: "https://github.com/jesuSando/StructPDF.git",
-    size: "large" as const,
-  },
-  {
-    title: "Ritmo",
-    description: "Ritmo is a structured life management system that integrates productivity, routines, financial control and personal tracking into a single cohesive architecture. Designed around relational data integrity, time-based logic and scalable backend patterns, it combines a custom Node.js + Express API with multi-platform clients (Next.js + React Native). The system is built with long-term evolution in mind, separating concerns between scheduling logic, financial state management and behavioral tracking.",
-    items: {
-      web: {
-        title: "Ritmo Web",
-        description: "The web client is built with Next.js and acts as the primary dashboard interface. It provides calendar-based task visualization, financial summaries, budget tracking and routine management. The UI is structured around data-driven components that reflect relational backend state (tasks, dependencies, recurring routines, accounts and budgets). Designed for high information density while maintaining clarity, it emphasizes structured flows rather than simple CRUD screens.",
-        image: "/images/ritmo-web.png",
-        badge: "Developing"
-      },
-      mobile: {
-        title: "Ritmo Mobile",
-        description: "The mobile application (React Native) focuses on daily execution: marking tasks complete, logging habits, tracking expenses in real time and receiving scheduled notifications. It is optimized for fast interaction and state synchronization with the backend, ensuring consistency between financial balances, recurring routines and task dependency chains.",
-        image: "/images/ritmo-mobile.png",
-        badge: "Developing"
-      },
-      backend: {
-        title: "Ritmo Backend",
-        description: "The backend is built with Node.js, Express and Sequelize, structured around relational domain modeling. It manages users, financial accounts, budgets, transactions (including recurring patterns), routines with conflict resolution policies, task dependency graphs, time-block scheduling, habit logs and a queued notification system. Special attention is given to state integrity: balance recalculation, cascade behaviors, recurrence logic and scheduling conflicts are resolved at the service layer. The architecture is modular, migration-driven and designed for future scalability (microservices or event-based expansion).",
-        image: "/images/backend.png",
-        code: "https://github.com/jesuSando/Ritmo.git"
-      }
-    },
-    tags: ["Next.js", "React Native", "Node.js", "Express", "Sequelize"],
-    size: "large" as const,
-  },
-  {
-    title: "Dynamic Email Service",
-    description: "A provider-agnostic email microservice supporting Nodemailer and SendGrid through a unified payload structure, with template support and file attachments.",
-    image: "/images/backend.png",
-    tags: ["Node.js", "Microservices", "SendGrid", "Nodemailer"],
-    code: "https://github.com/jesuSando/mail-service.git",
-    size: "small" as const,
-  },
-  {
-    title: "Ekonomi App",
-    description: "A budgeting and expense management app with monthly limits and an integrated contextual chatbot restricted to domain-specific queries.",
-    image: "/images/ekonomi.png",
-    tags: ["Angular", "Ionic", "TypeScript", "Gemini API", "Firebase"],
-    code: "https://github.com/BMolinae/Front-Ekonomi.git",
-    size: "small" as const,
-  },
-  {
-    title: "GladIAtor",
-    description: "A real-time autonomous combat simulation where AI-driven gladiators learn, adapt, and suffer permanent consequences. A strategy layer built around risk, training, and emergent behavior.",
-    image: "/images/game.png",
-    tags: ["Game Design", "AI Systems", "Simulation", "Behavior Models"],
-    size: "medium" as const,
-  },
-]
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({
+  project,
+  seeMore,
+  seeLess,
+}: {
+  project: Project
+  seeMore: string
+  seeLess: string
+}) {
   const hasItems = !!project.items
   const itemKeys = hasItems ? Object.keys(project.items!) : []
   const [activeIndex, setActiveIndex] = useState(0)
@@ -211,7 +161,7 @@ function ProjectCard({ project }: { project: Project }) {
                 onClick={() => setExpanded(!expanded)}
                 className="ml-1 cursor-pointer text-accent transition hover:text-accent/80"
               >
-                {expanded ? "See less" : "See more"}
+                {expanded ? seeLess : seeMore}
               </button>
             </>
           )}
@@ -233,23 +183,90 @@ function ProjectCard({ project }: { project: Project }) {
 }
 
 export function Projects() {
+  const { t } = useLanguage()
+
+  const projects: Project[] = [
+    {
+      title: t.projects.projects.pdf.title,
+      description: t.projects.projects.pdf.description,
+      image: "/images/backend.png",
+      tags: ["Node.js", "TypeScript", "DSL", "PDF Generation", "npm"],
+      code: "https://github.com/jesuSando/StructPDF.git",
+      size: "large" as const,
+    },
+    {
+      title: t.projects.projects.ritmo.title,
+      description: t.projects.projects.ritmo.description,
+      items: {
+        web: {
+          title: t.projects.projects.ritmo.web.title,
+          description: t.projects.projects.ritmo.web.description,
+          image: "/images/ritmo-web.png",
+          badge: "Developing"
+        },
+        mobile: {
+          title: t.projects.projects.ritmo.mobile.title,
+          description: t.projects.projects.ritmo.mobile.description,
+          image: "/images/ritmo-mobile.png",
+          badge: "Developing"
+        },
+        backend: {
+          title: t.projects.projects.ritmo.backend.title,
+          description: t.projects.projects.ritmo.backend.description,
+          image: "/images/backend.png",
+          code: "https://github.com/jesuSando/Ritmo.git"
+        }
+      },
+      tags: ["Next.js", "React Native", "Node.js", "Express", "Sequelize"],
+      size: "large" as const,
+    },
+    {
+      title: t.projects.projects.email.title,
+      description: t.projects.projects.email.description,
+      image: "/images/backend.png",
+      tags: ["Node.js", "Microservices", "SendGrid", "Nodemailer"],
+      code: "https://github.com/jesuSando/mail-service.git",
+      size: "small" as const,
+    },
+    {
+      title: t.projects.projects.ekonomi.title,
+      description: t.projects.projects.ekonomi.description,
+      image: "/images/ekonomi.png",
+      tags: ["Angular", "Ionic", "TypeScript", "Gemini API", "Firebase"],
+      code: "https://github.com/BMolinae/Front-Ekonomi.git",
+      size: "small" as const,
+    },
+    {
+      title: t.projects.projects.gladiator.title,
+      description: t.projects.projects.gladiator.description,
+      image: "/images/game.png",
+      tags: ["Game Design", "AI Systems", "Simulation", "Behavior Models"],
+      size: "medium" as const,
+    },
+  ]
+
   return (
     <section id="projects" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Featured Projects
+              {t.projects.title}
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            Selected projects where I explore systems thinking, architecture design, and experimental ideas — from developer tools to autonomous simulations.
+            {t.projects.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {projects.filter((p) => p.size === "large").map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard
+              key={project.title}
+              project={project}
+              seeMore={t.projects.seeMore}
+              seeLess={t.projects.seeLess}
+            />
           ))}
         </div>
 
@@ -257,7 +274,12 @@ export function Projects() {
           {projects
             .filter((p) => p.size === "small" || p.size === "medium")
             .map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+                seeMore={t.projects.seeMore}
+                seeLess={t.projects.seeLess}
+              />
             ))}
         </div>
       </div>
