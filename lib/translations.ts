@@ -1,5 +1,12 @@
 export const translations = {
   en: {
+    navbar: {
+      about: "About",
+      experience: "Experience",
+      projects: "Projects",
+      stack: "Stack",
+      contact: "Let's Talk",
+    },
     hero: {
       description: "I build structured, scalable systems — from internal tools to full-stack applications — turning complex ideas into reliable software.",
       cta: "Explore my work",
@@ -252,6 +259,13 @@ export const translations = {
   },
 
   es: {
+    navbar: {
+      about: "Sobre mi",
+      experience: "Experiencia",
+      projects: "Proyectos",
+      stack: "Stack",
+      contact: "Hablemos",
+    },
     hero: {
       description: "Construyo sistemas estructurados y escalables — desde herramientas internas hasta aplicaciones full-stack — transformando ideas complejas en software confiable.",
       cta: "Explora mi trabajo",

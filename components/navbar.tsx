@@ -2,16 +2,19 @@
 
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import { useLanguage } from "@/context/LanguageContext"
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Stack", href: "#stack" },
-]
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t.navbar.about, href: "#about" },
+    { label: t.navbar.experience, href: "#experience" },
+    { label: t.navbar.projects, href: "#projects" },
+    { label: t.navbar.stack, href: "#stack" },
+  ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
@@ -42,7 +45,7 @@ export function Navbar() {
           href="#contact"
           className="hidden rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground transition-opacity hover:opacity-90 md:inline-flex"
         >
-          Let&apos;s Talk
+          {t.navbar.contact}
         </a>
 
         <button
@@ -74,7 +77,7 @@ export function Navbar() {
                 className="inline-flex rounded-full bg-accent px-5 py-2 text-sm font-medium text-accent-foreground"
                 onClick={() => setOpen(false)}
               >
-                Let&apos;s Talk
+                {t.navbar.contact}
               </a>
             </li>
           </ul>
