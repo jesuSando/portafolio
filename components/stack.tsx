@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { useLanguage } from "@/context/LanguageContext"
 
 const categories = ["All", "Frontend", "Backend", "Tools", "Design"] as const
 type Category = (typeof categories)[number]
@@ -12,188 +13,7 @@ interface Tech {
   description: string
 }
 
-const stack: Tech[] = [
-  {
-    name: "Node.js",
-    category: "Backend",
-    time: 2,
-    description: "REST API development, middleware architecture, authentication flows, and scalable service design.",
-  },
-  {
-    name: "React",
-    category: "Frontend",
-    time: 1.5,
-    description: "Component-based architecture, hooks, context patterns, state management, and performance optimization.",
-  },
-  {
-    name: "Git",
-    category: "Tools",
-    time: 3,
-    description: "Branching strategies, rebasing, conflict resolution, collaborative workflows, and version control best practices.",
-  },
-  {
-    name: "Adobe Photoshop",
-    category: "Design",
-    time: 2,
-    description: "Image editing, digital composition, visual assets creation, and graphic optimization for web and video.",
-  },
-  {
-    name: "TypeScript",
-    category: "Frontend",
-    time: 1,
-    description: "Strong typing, generics, utility types, and scalable code architecture for large applications.",
-  },
-  {
-    name: "Express",
-    category: "Backend",
-    time: 2,
-    description: "Structured routing, layered architecture (controllers/services), middleware patterns, and API modularization.",
-  },
-  {
-    name: "Docker",
-    category: "Tools",
-    time: 0,
-    description: "Containerization, multi-service environments with Docker Compose, and reproducible development setups.",
-  },
-  {
-    name: "Adobe After Effects",
-    category: "Design",
-    time: 2,
-    description: "Motion graphics, animation principles, visual effects, and dynamic content production.",
-  },
-  {
-    name: "JavaScript",
-    category: "Frontend",
-    time: 2,
-    description: "Modern ES6+ syntax, asynchronous patterns (Promises, async/await), modular architecture, and functional programming principles.",
-  },
-  {
-    name: "PostgreSQL",
-    category: "Backend",
-    time: 1,
-    description: "Schema design, relational modeling, indexing strategies, and complex query optimization.",
-  },
-  {
-    name: "GitHub",
-    category: "Tools",
-    time: 3,
-    description: "Pull requests, repository management, CI basics, and collaborative project organization.",
-  },
-  {
-    name: "Adobe Premiere Pro",
-    category: "Design",
-    time: 2,
-    description: "Professional video editing, storytelling through montage, color correction, and content production workflows.",
-  },
-  {
-    name: "Next.js",
-    category: "Frontend",
-    time: 1.5,
-    description: "App Router, server/client components, API routes, SSR/ISR strategies, and structured full-stack architecture.",
-  },
-  {
-    name: "MySQL",
-    category: "Backend",
-    time: 2,
-    description: "Database design, relational integrity, stored procedures basics, and production-level querying.",
-  },
-  {
-    name: "Linux",
-    category: "Tools",
-    time: 1.5,
-    description: "Command-line proficiency, process management, server environments, and system configuration basics.",
-  },
-  {
-    name: "Tailwind CSS",
-    category: "Frontend",
-    time: 1.5,
-    description: "Utility-first styling, responsive layouts, custom design systems, and scalable UI composition.",
-  },
-  {
-    name: "Python",
-    category: "Backend",
-    time: 1,
-    description: "Backend scripting, data handling, and web development fundamentals.",
-  },
-  {
-    name: "Postman",
-    category: "Tools",
-    time: 2,
-    description: "API testing, request automation, environment variables, and endpoint validation workflows.",
-  },
-  {
-    name: "Sass",
-    category: "Frontend",
-    time: 1,
-    description: "Modular styling architecture, variables, mixins, and structured CSS organization.",
-  },
-  {
-    name: "Django",
-    category: "Backend",
-    time: 0,
-    description: "MVC architecture, ORM usage, authentication systems, and rapid backend prototyping.",
-  },
-  {
-    name: "Vercel",
-    category: "Tools",
-    time: 1,
-    description: "Frontend deployment, preview environments, and serverless API hosting.",
-  },
-  {
-    name: "Bootstrap",
-    category: "Frontend",
-    time: 1,
-    description: "Component-based UI framework usage and responsive grid systems.",
-  },
-  {
-    name: "Sequelize",
-    category: "Backend",
-    time: 1,
-    description: "Relational modeling, migrations, associations, transaction handling, and database abstraction.",
-  },
-  {
-    name: "Netlify",
-    category: "Tools",
-    time: 1,
-    description: "Static deployment pipelines and frontend hosting workflows.",
-  },
-  {
-    name: "React Native",
-    category: "Frontend",
-    time: 0.5,
-    description: "Cross-platform mobile development with shared logic, optimized rendering, and native integrations.",
-  },
-  {
-    name: "MongoDB",
-    category: "Backend",
-    time: 0.5,
-    description: "Document-based modeling, schema design trade-offs, and aggregation pipelines.",
-  },
-  {
-    name: "VS Code",
-    category: "Tools",
-    time: 3,
-    description: "Advanced editor configuration, extensions, debugging tools, and productivity optimization.",
-  },
-  {
-    name: "Expo",
-    category: "Frontend",
-    time: 0.5,
-    description: "React Native tooling, OTA updates, native modules, and simplified mobile deployment workflows.",
-  },
-  {
-    name: "Angular",
-    category: "Frontend",
-    time: 0,
-    description: "Component-driven SPA development, services, dependency injection, and reactive forms.",
-  },
-  {
-    name: "Astro",
-    category: "Frontend",
-    time: 1,
-    description: "Static-first architecture, partial hydration, and performance-focused frontend builds.",
-  },
-]
+
 
 function getTimeBadge(years: number) {
   if (years >= 3) {
@@ -227,6 +47,190 @@ function getTimeBadge(years: number) {
 export function Stack() {
   const [activeCategory, setActiveCategory] = useState<Category>("All")
   const [expanded, setExpanded] = useState(false);
+  const { t } = useLanguage()
+
+  const stack: Tech[] = [
+    {
+      name: "Node.js",
+      category: "Backend",
+      time: 2,
+      description: t.stack.tech.node,
+    },
+    {
+      name: "React",
+      category: "Frontend",
+      time: 1.5,
+      description: t.stack.tech.react,
+    },
+    {
+      name: "Git",
+      category: "Tools",
+      time: 3,
+      description: t.stack.tech.git,
+    },
+    {
+      name: "Adobe Photoshop",
+      category: "Design",
+      time: 2,
+      description: t.stack.tech.photoshop,
+    },
+    {
+      name: "TypeScript",
+      category: "Frontend",
+      time: 1,
+      description: t.stack.tech.typescript,
+    },
+    {
+      name: "Express",
+      category: "Backend",
+      time: 2,
+      description: t.stack.tech.express,
+    },
+    {
+      name: "Docker",
+      category: "Tools",
+      time: 0,
+      description: t.stack.tech.docker,
+    },
+    {
+      name: "Adobe After Effects",
+      category: "Design",
+      time: 2,
+      description: t.stack.tech.aftereffects,
+    },
+    {
+      name: "JavaScript",
+      category: "Frontend",
+      time: 2,
+      description: t.stack.tech.javascript,
+    },
+    {
+      name: "PostgreSQL",
+      category: "Backend",
+      time: 1,
+      description: t.stack.tech.postgresql,
+    },
+    {
+      name: "GitHub",
+      category: "Tools",
+      time: 3,
+      description: t.stack.tech.github,
+    },
+    {
+      name: "Adobe Premiere Pro",
+      category: "Design",
+      time: 2,
+      description: t.stack.tech.premiere,
+    },
+    {
+      name: "Next.js",
+      category: "Frontend",
+      time: 1.5,
+      description: t.stack.tech.next,
+    },
+    {
+      name: "MySQL",
+      category: "Backend",
+      time: 2,
+      description: t.stack.tech.mysql,
+    },
+    {
+      name: "Linux",
+      category: "Tools",
+      time: 1.5,
+      description: t.stack.tech.linux,
+    },
+    {
+      name: "Tailwind CSS",
+      category: "Frontend",
+      time: 1.5,
+      description: t.stack.tech.tailwind,
+    },
+    {
+      name: "Python",
+      category: "Backend",
+      time: 1,
+      description: t.stack.tech.python,
+    },
+    {
+      name: "Postman",
+      category: "Tools",
+      time: 2,
+      description: t.stack.tech.postman,
+    },
+    {
+      name: "Sass",
+      category: "Frontend",
+      time: 1,
+      description: t.stack.tech.sass,
+    },
+    {
+      name: "Django",
+      category: "Backend",
+      time: 0,
+      description: t.stack.tech.django,
+    },
+    {
+      name: "Vercel",
+      category: "Tools",
+      time: 1,
+      description: t.stack.tech.vercel,
+    },
+    {
+      name: "Bootstrap",
+      category: "Frontend",
+      time: 1,
+      description: t.stack.tech.bootstrap,
+    },
+    {
+      name: "Sequelize",
+      category: "Backend",
+      time: 1,
+      description: t.stack.tech.sequelize,
+    },
+    {
+      name: "Netlify",
+      category: "Tools",
+      time: 1,
+      description: t.stack.tech.netlify,
+    },
+    {
+      name: "React Native",
+      category: "Frontend",
+      time: 0.5,
+      description: t.stack.tech.reactnative,
+    },
+    {
+      name: "MongoDB",
+      category: "Backend",
+      time: 0.5,
+      description: t.stack.tech.mongodb,
+    },
+    {
+      name: "VS Code",
+      category: "Tools",
+      time: 3,
+      description: t.stack.tech.vscode,
+    },
+    {
+      name: "Expo",
+      category: "Frontend",
+      time: 0.5,
+      description: t.stack.tech.expo,
+    },
+    {
+      name: "Angular",
+      category: "Frontend",
+      time: 0,
+      description: t.stack.tech.angular,
+    },
+    {
+      name: "Astro",
+      category: "Frontend",
+      time: 1,
+      description: t.stack.tech.astro,
+    },
+  ]
 
   const filtered =
     activeCategory === "All"
@@ -246,16 +250,14 @@ export function Stack() {
         <div className="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <h2 className="text-balance text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Tech Stack
+              {t.stack.title}
             </h2>
           </div>
           <p className="max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            The technologies I use daily to build modern, scalable, and
-            delightful web applications.
+            {t.stack.description}
           </p>
         </div>
 
-        {/* Filter tabs */}
         <div className="mb-8 flex flex-wrap gap-2">
           {categories.map((cat) => (
             <button
@@ -271,7 +273,6 @@ export function Stack() {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {displayItems.map((tech) => (
             <div
@@ -310,7 +311,7 @@ export function Stack() {
                 onClick={() => setExpanded(!expanded)}
                 className="cursor-pointer text-accent transition hover:text-accent/80"
               >
-                {expanded ? "See less" : "See all"}
+                {expanded ? t.stack.buttons.seeLess : t.stack.buttons.seeAll}
               </button>
             </div>
           )}

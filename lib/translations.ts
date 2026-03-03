@@ -159,6 +159,63 @@ export const translations = {
         developing: "Developing",
       },
     },
+    stack: {
+      title: "Tech Stack",
+      description:
+        "The technologies I use daily to build modern, scalable, and delightful web applications.",
+
+      categories: {
+        All: "All",
+        Frontend: "Frontend",
+        Backend: "Backend",
+        Tools: "Tools",
+        Design: "Design",
+      },
+
+      buttons: {
+        seeAll: "See all",
+        seeLess: "See less",
+      },
+
+      badge: {
+        years: "years",
+        year: "year",
+        learning: "Learning",
+      },
+
+      tech: {
+        node: "REST API development, middleware architecture, authentication flows, and scalable service design.",
+        react: "Component-based architecture, hooks, context patterns, state management, and performance optimization.",
+        git: "Branching strategies, rebasing, conflict resolution, collaborative workflows, and version control best practices.",
+        photoshop: "Image editing, digital composition, visual assets creation, and graphic optimization for web and video.",
+        typescript: "Strong typing, generics, utility types, and scalable code architecture for large applications.",
+        express: "Structured routing, layered architecture (controllers/services), middleware patterns, and API modularization.",
+        docker: "Containerization, multi-service environments with Docker Compose, and reproducible development setups.",
+        aftereffects: "Motion graphics, animation principles, visual effects, and dynamic content production.",
+        javascript: "Modern ES6+ syntax, asynchronous patterns (Promises, async/await), modular architecture, and functional programming principles.",
+        postgresql: "Schema design, relational modeling, indexing strategies, and complex query optimization.",
+        github: "Pull requests, repository management, CI basics, and collaborative project organization.",
+        premiere: "Professional video editing, storytelling through montage, color correction, and content production workflows.",
+        next: "App Router, server/client components, API routes, SSR/ISR strategies, and structured full-stack architecture.",
+        mysql: "Database design, relational integrity, stored procedures basics, and production-level querying.",
+        linux: "Command-line proficiency, process management, server environments, and system configuration basics.",
+        tailwind: "Utility-first styling, responsive layouts, custom design systems, and scalable UI composition.",
+        python: "Backend scripting, data handling, and web development fundamentals.",
+        postman: "API testing, request automation, environment variables, and endpoint validation workflows.",
+        sass: "Modular styling architecture, variables, mixins, and structured CSS organization.",
+        django: "MVC architecture, ORM usage, authentication systems, and rapid backend prototyping.",
+        vercel: "Frontend deployment, preview environments, and serverless API hosting.",
+        bootstrap: "Component-based UI framework usage and responsive grid systems.",
+        sequelize: "Relational modeling, migrations, associations, transaction handling, and database abstraction.",
+        netlify: "Static deployment pipelines and frontend hosting workflows.",
+        reactnative: "Cross-platform mobile development with shared logic, optimized rendering, and native integrations.",
+        mongodb: "Document-based modeling, schema design trade-offs, and aggregation pipelines.",
+        vscode: "Advanced editor configuration, extensions, debugging tools, and productivity optimization.",
+        expo: "React Native tooling, OTA updates, native modules, and simplified mobile deployment workflows.",
+        angular: "Component-driven SPA development, services, dependency injection, and reactive forms.",
+        astro: "Static-first architecture, partial hydration, and performance-focused frontend builds.",
+      },
+    },
     footer: {
       title: "Let's Build Something Together",
       subtitle: "If you have an idea, let's turn it into something real.",
@@ -356,6 +413,63 @@ export const translations = {
 
       badges: {
         developing: "En desarrollo",
+      },
+    },
+    stack: {
+      title: "Stack Tecnológico",
+      description:
+        "Las tecnologías que uso a diario para construir aplicaciones web modernas, escalables y bien diseñadas.",
+
+      categories: {
+        All: "Todas",
+        Frontend: "Frontend",
+        Backend: "Backend",
+        Tools: "Herramientas",
+        Design: "Diseño",
+      },
+
+      buttons: {
+        seeAll: "Ver todo",
+        seeLess: "Ver menos",
+      },
+
+      badge: {
+        years: "años",
+        year: "año",
+        learning: "Aprendiendo",
+      },
+
+      tech: {
+        node: "Desarrollo de APIs REST, arquitectura con middlewares, flujos de autenticación y diseño de servicios escalables.",
+        react: "Arquitectura basada en componentes, hooks, patrones con context, manejo de estado y optimización de rendimiento.",
+        git: "Estrategias de branching, rebase, resolución de conflictos y flujos colaborativos.",
+        photoshop: "Edición de imágenes, composición digital y optimización gráfica para web y video.",
+        typescript: "Tipado fuerte, genéricos y arquitectura escalable para aplicaciones grandes.",
+        express: "Rutas estructuradas, arquitectura en capas y modularización de APIs.",
+        docker: "Contenerización y entornos reproducibles con Docker Compose.",
+        aftereffects: "Motion graphics, animación y producción de contenido visual dinámico.",
+        javascript: "Sintaxis moderna ES6+, asincronía y principios funcionales.",
+        postgresql: "Diseño de esquemas, modelado relacional e indexación.",
+        github: "Pull requests, gestión de repositorios y colaboración.",
+        premiere: "Edición profesional de video y corrección de color.",
+        next: "App Router, SSR/ISR y arquitectura full-stack estructurada.",
+        mysql: "Diseño relacional y consultas optimizadas en producción.",
+        linux: "Uso avanzado de terminal y gestión básica de servidores.",
+        tailwind: "Estilos utility-first y sistemas de diseño escalables.",
+        python: "Scripting backend y fundamentos de desarrollo web.",
+        postman: "Testing y validación de APIs.",
+        sass: "Arquitectura modular de estilos y mixins.",
+        django: "Arquitectura MVC y prototipado rápido backend.",
+        vercel: "Despliegue frontend y entornos preview.",
+        bootstrap: "Framework UI con grid responsivo.",
+        sequelize: "Modelado relacional y manejo de migraciones.",
+        netlify: "Despliegue estático y pipelines frontend.",
+        reactnative: "Desarrollo móvil multiplataforma.",
+        mongodb: "Modelado basado en documentos.",
+        vscode: "Configuración avanzada y herramientas de debugging.",
+        expo: "Tooling simplificado para React Native.",
+        angular: "SPA basada en componentes y servicios.",
+        astro: "Arquitectura estática enfocada en rendimiento.",
       },
     },
     footer: {
