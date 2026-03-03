@@ -1,12 +1,16 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
 
 
+
+
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
   const { t } = useLanguage();
 
   const navLinks = [
@@ -16,8 +20,25 @@ export function Navbar() {
     { label: t.navbar.stack, href: "#stack" },
   ]
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 border-b transition-all 
+        duration-500 ease-in-out
+        ${scrolled
+          ? "bg-background/80 backdrop-blur-md border-border/50"
+          : "bg-transparent border-transparent"
+        }
+        `}
+    >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#"
