@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import { useLanguage } from "@/context/LanguageContext"
-
+import { LanguageSwitch } from "./LanguageSwitch"
 
 
 
@@ -40,14 +40,7 @@ export function Navbar() {
         `}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#"
-          className="text-lg font-bold tracking-tight text-foreground"
-        >
-          {'<'}
-          <span className="text-accent">jesuSando</span>
-          {' />'}
-        </a>
+        <LanguageSwitch button={true} />
 
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (

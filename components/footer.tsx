@@ -192,17 +192,11 @@ export function Footer() {
         <div className="mb-12 border-t border-border pt-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             <div className="col-span-2 md:col-span-1">
-              <a
-                href="#"
-                className="text-lg font-bold tracking-tight text-foreground"
-              >
-                {'<'}
-                <span className="text-accent">jesuSando</span>
-                {' />'}
-              </a>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <LanguageSwitch button={false} />
+              <p className="my-3 text-sm leading-relaxed text-muted-foreground">
                 {t.footer.brandDescription}
               </p>
+
             </div>
 
             {Object.entries(footerLinks).map(([category, links]) => (
@@ -225,17 +219,13 @@ export function Footer() {
               </div>
             ))}
 
-            {/* <div className="border border-border bg-card w-fit rounded-full">
+            <div className="border border-border bg-card w-fit rounded-full">
               <Image
                 src="/images/yoshi.png"
-                alt="Description"
+                alt="last-portfolio"
                 width={120}
                 height={120}
               />
-            </div> */}
-
-            <div>
-              <LanguageSwitch />
             </div>
           </div>
         </div>
