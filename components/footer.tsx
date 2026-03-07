@@ -200,11 +200,11 @@ export function Footer() {
             </div>
 
             {Object.entries(footerLinks).map(([category, links]) => (
-              <div key={category}>
-                <h3 className="mb-3 text-sm font-semibold text-foreground">
+              <div key={category} className="flex flex-col justify-center items-center">
+                <h3 className="mb-3 text-sm font-semibold text-foreground text-center">
                   {category}
                 </h3>
-                <ul className="flex flex-col gap-2">
+                <ul className="flex flex-col gap-2 items-center">
                   {links.map((link) => (
                     <li key={link.label}>
                       <a
@@ -218,24 +218,26 @@ export function Footer() {
                 </ul>
               </div>
             ))}
+            <div className="flex justify-end">
 
-            <a
-              href="https://jesus-sandoval-2025.netlify.app/"
-              className="relative block w-[130px] h-[130px] group"
-            >
-              <div className="absolute inset-0 border-2 border-border rounded-full group-hover:border-accent transition-colors" />
+              <a
+                href="https://jesus-sandoval-2025.netlify.app/"
+                className="relative block w-[130px] h-[130px] group"
+              >
+                <div className="absolute inset-0 border-2 border-border rounded-full group-hover:border-accent transition-colors" />
 
-              <div className="absolute -top-1 -left-1 -right-1 -bottom-1">
-                <Image
-                  src="/images/yoshi.png"
-                  alt="last-portfolio"
-                  width={160}
-                  height={160}
-                  className="w-full h-full object-contain drop-shadow-lg"
-                  priority
-                />
-              </div>
-            </a>
+                <div className="absolute -top-1 -left-1 -right-1 -bottom-1">
+                  <Image
+                    src="/images/yoshi.png"
+                    alt="last-portfolio"
+                    width={160}
+                    height={160}
+                    className="w-full h-full object-contain drop-shadow-lg"
+                    priority
+                  />
+                </div>
+              </a>
+            </div>
           </div>
         </div>
 
