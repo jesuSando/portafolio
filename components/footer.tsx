@@ -219,14 +219,23 @@ export function Footer() {
               </div>
             ))}
 
-            <div className="border border-border bg-card w-fit rounded-full">
-              <Image
-                src="/images/yoshi.png"
-                alt="last-portfolio"
-                width={120}
-                height={120}
-              />
-            </div>
+            <a
+              href="https://jesus-sandoval-2025.netlify.app/"
+              className="relative block w-[130px] h-[130px] group"
+            >
+              <div className="absolute inset-0 border-2 border-border rounded-full group-hover:border-accent transition-colors" />
+
+              <div className="absolute -top-1 -left-1 -right-1 -bottom-1">
+                <Image
+                  src="/images/yoshi.png"
+                  alt="last-portfolio"
+                  width={160}
+                  height={160}
+                  className="w-full h-full object-contain drop-shadow-lg"
+                  priority
+                />
+              </div>
+            </a>
           </div>
         </div>
 
