@@ -23,7 +23,7 @@ export function LanguageSwitch({ button }: LanguageSwitchProps) {
             {button && (
                 <button
                     onClick={() => setLanguage(language === "en" ? "es" : "en")}
-                    className="text-sm border px-3 py-1 rounded-full cursor-pointer"
+                    className="text-sm border bg-card px-3 py-1 rounded-full cursor-pointer hover:border-accent/40"
                 >
                     {language === "en" ? "ES" : "EN"}
                 </button>
