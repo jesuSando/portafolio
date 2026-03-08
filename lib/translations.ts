@@ -253,6 +253,8 @@ export const translations = {
         email: "Email"
       },
 
+      previus: "Previous portfolio",
+
       copyright: "2026 Jesús Sandoval. All rights reserved.",
       closing: "Thx 4 reading :p"
     }
@@ -515,6 +517,8 @@ export const translations = {
         instagram: "Instagram",
         email: "Correo"
       },
+
+      previus: "Portafolio Anterior",
 
       copyright: "2026 Jesús Sandoval. Todos los derechos reservados.",
       closing: "Gracias por leer :p"

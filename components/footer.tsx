@@ -218,8 +218,7 @@ export function Footer() {
                 </ul>
               </div>
             ))}
-            <div className="flex justify-end">
-
+            <div className="flex flex-col items-center justify-self-end">
               <a
                 href="https://jesus-sandoval-2025.netlify.app/"
                 className="relative block w-[130px] h-[130px] group"
@@ -232,11 +231,14 @@ export function Footer() {
                     alt="last-portfolio"
                     width={160}
                     height={160}
-                    className="w-full h-full object-contain drop-shadow-lg"
+                    className="w-full h-full object-contain drop-shadow-lg transition-transform group-hover:scale-110"
                     priority
                   />
                 </div>
               </a>
+              <span className="mt-2 text-xs text-muted-foreground">
+                {t.footer.previus}
+              </span>
             </div>
           </div>
         </div>
