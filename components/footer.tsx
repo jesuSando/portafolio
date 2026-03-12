@@ -179,7 +179,7 @@ export function Footer() {
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || (email.length < 5 || idea.length < 3)}
               className="rounded-full bg-accent px-6 py-2 text-sm font-medium text-accent-foreground 
       transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
             >
@@ -191,12 +191,11 @@ export function Footer() {
 
         <div className="mb-12 border-t border-border pt-12">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-            <div className="col-span-2 md:col-span-1">
+            <div className="col-span-2 md:col-span-1 border-r border-border">
               <LanguageSwitch button={false} />
               <p className="my-3 text-sm leading-relaxed text-muted-foreground">
                 {t.footer.brandDescription}
               </p>
-
             </div>
 
             {Object.entries(footerLinks).map(([category, links]) => (
