@@ -327,7 +327,7 @@ export const translations = {
           company: "WIT Innovación y Tecnología",
           period: "2025 - Mayo 2026",
           description:
-            "Contribuí al desarrollo y despliegue de soluciones tecnológicas para el sector del transporte. Construí paneles administrativos y sistemas de reserva de asientos, integré pasarelas de pago y desarrollé herramientas internas para optimizar operaciones. También participé en instalaciones en terreno de kioscos de autoservicio y terminales POS, obteniendo experiencia práctica más allá del desarrollo de software puro.",
+            "Contribuí al desarrollo y despliegue de soluciones tecnológicas para el sector del transporte. Construí paneles administrativos y sistemas de reserva de asientos, integré pasarelas de pago y desarrollé herramientas internas para optimizar operaciones. También participé en instalaciones en terreno de totems de autoservicio y terminales POS, obteniendo experiencia práctica más allá del desarrollo de software puro.",
         },
 
         freelance: {
@@ -351,15 +351,15 @@ export const translations = {
           company: "Duoc UC",
           period: "2023 - 2025",
           description:
-            "Completé mi formación en Analista Programador, construyendo bases sólidas en desarrollo de software. Aunque mi práctica estuvo orientada al desarrollo, trabajé en instalaciones de sistemas (incluyendo mi primera experiencia con Linux), configuración de equipos y soporte en terreno — una exposición temprana a infraestructura y entornos técnicos reales.",
+            "Completé mi formación como Analista Programador Computacional, construyendo bases sólidas en desarrollo de software. Aunque mi práctica estuvo orientada al desarrollo, trabajé en instalaciones de sistemas (incluyendo mi primera experiencia con Linux), configuración de equipos y soporte en terreno — una exposición temprana a infraestructura y entornos técnicos reales.",
         },
 
         engineering: {
-          title: "Estudiante de Ingeniería en Computación",
+          title: "Estudiante de Ingeniería Civil Informática",
           company: "Universidad Andrés Bello",
           period: "2026 - Presente",
           description:
-            "Actualmente cursando Ingeniería en Computación para profundizar mis bases teóricas y fortalecer mi visión técnica a largo plazo. Esta etapa se enfoca en sistemas avanzados, arquitectura de software y resolución de problemas a nivel de ingeniería para complementar mi experiencia técnica.",
+            "Actualmente cursando Ingeniería Civil Informárica para profundizar mis bases teóricas y fortalecer mi visión técnica a largo plazo. Esta etapa se enfoca en sistemas avanzados, arquitectura de software y resolución de problemas a nivel de ingeniería para complementar mi experiencia técnica.",
         },
       },
     },
