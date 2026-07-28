@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/LanguageContext"
 
 const socialIcons = [
   { Icon: Github, href: "https://github.com/jesuSando", label: "GitHub" },
-  { Icon: Linkedin, href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292", label: "LinkedIn" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/in/jes%C3%BAs-orlando-sandoval-mart%C3%ADnez/", label: "LinkedIn" },
   { Icon: Instagram, href: "https://www.instagram.com/vzzaroo", label: "Instagram" },
   { Icon: Mail, href: "mailto:sandoval.jesus2005@gmail.com", label: "Email" },
 ]
