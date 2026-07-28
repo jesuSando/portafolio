@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext"
 
 const techStack = [
   { label: "GitHub", href: "https://github.com/jesuSando" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/jesús-sandoval-martínez-983112292" },
+  { label: "LinkedIn", href: "www.linkedin.com/in/jesús-orlando-sandoval-martínez" },
   { label: "Instagram", href: "https://www.instagram.com/vzzaroo" },
 ]
 
